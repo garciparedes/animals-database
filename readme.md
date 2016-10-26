@@ -1,4 +1,4 @@
-# Database Analysis and Design - Animals Practice
+# Animals Database
 
 Proyecto para la asignatura de **Análisis y diseño de Bases de Datos** del **Grado de Ingeniería Informática** de la **Escuela Técnica Superior de Ingenería Informática** ([ETSII](inf.uva.es)).
 
