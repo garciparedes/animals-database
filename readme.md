@@ -16,6 +16,9 @@ Contenido
 
 Autores
 ----
-Fernando Urbón:
-Sergio García: [garciparedes](https://github.com/garciparedes)
-Sergio Muñoz:
+- Fernando Urbón:
+- Sergio García: [garciparedes](https://github.com/garciparedes)
+- Sergio Muñoz:
+
+## Like it? Awesome!
+If you find this tool useful, consider supporting or [buying me a beer](https://www.paypal.me/garciparedes/2):)
