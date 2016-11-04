@@ -4,9 +4,6 @@ CREATE TABLE Animal (
     raza VARCHAR(50),
     descripcion TEXT,
 
-    CONSTRAINT uniAnimal
-        UNIQUE (especie,raza),
-
     CONSTRAINT claveAnimal
         PRIMARY KEY (especie, raza)
 );
