@@ -1,19 +1,19 @@
 CREATE TABLE vacuna_instancia(
 
-    nombreV VARCHAR(50) NOT NULL,
-    identificadorA INTEGER NOT NULL,
+    vacuna__nombre VARCHAR(50) NOT NULL,
+    instancia_animal__id INTEGER NOT NULL,
 
-    fechaAplicacion TIMESTAMP,
-    fechaFinValidez TIMESTAMP,
+    fecha_aplicacion TIMESTAMP,
+    fecha_fin_validez TIMESTAMP,
 
 
     CONSTRAINT vacuna_instancia__clvae
-        PRIMARY KEY (nombreV, fechaAplicacion, identificadorA),
+        PRIMARY KEY (vacuna__nombre, fecha_aplicacion, instancia_animal__id),
 
 
     CONSTRAINT vacuna_instancia__vacuna
-        FOREIGN KEY (nombreV) REFERENCES vacuna,
+        FOREIGN KEY (vacuna__nombre) REFERENCES vacuna,
 
     CONSTRAINT vacuna_instancia__animal_instancia
-        FOREIGN KEY (identificadorA) REFERENCES animal_instancia
+        FOREIGN KEY (instancia_animal__id) REFERENCES animal_instancia
 );

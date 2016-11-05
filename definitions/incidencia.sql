@@ -2,7 +2,7 @@ CREATE TABLE incidencia (
 
     identificadorAP INTEGER NOT NULL,
     identificadorRP INTEGER NOT NULL,
-    fechaInicioP TIMESTAMP NOT NULL,
+    propiedad__fecha_inicio TIMESTAMP NOT NULL,
 
     fecha TIMESTAMP,
     tipo VARCHAR(50),
@@ -13,5 +13,5 @@ CREATE TABLE incidencia (
 
 
     CONSTRAINT incidencia__propiedad
-        FOREIGN KEY (identificadorAP, identificadorRP, fechaInicioP) REFERENCES propiedad
+        FOREIGN KEY (identificadorAP, identificadorRP, propiedad__fecha_inicio) REFERENCES propiedad
 );

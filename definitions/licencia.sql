@@ -1,12 +1,11 @@
 CREATE TABLE licencia (
 
-    identificador INTEGER,
+
+    id INTEGER,
     tipo VARCHAR(50),
     descripcion TEXT,
 
 
-
-
     CONSTRAINT licencia__clave
-        PRIMARY KEY (identificador)
+        PRIMARY KEY (id)
 );

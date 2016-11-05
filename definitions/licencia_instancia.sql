@@ -1,15 +1,17 @@
 CREATE TABLE licencia_instancia(
 
+
     identificadorR INTEGER NOT NULL,
     identificadorL INTEGER NOT NULL,
 
-    numLicencia INTEGER,
-    fechaInicio TIMESTAMP,
-    fechaFin TIMESTAMP,
+
+    num_licencia INTEGER,
+    fecha_inicio TIMESTAMP,
+    fecha_fin TIMESTAMP,
 
 
     CONSTRAINT licencia_instancia__clave
-        PRIMARY KEY (numLicencia, fechaInicio),
+        PRIMARY KEY (num_licencia, fecha_inicio),
 
 
     CONSTRAINT licencia_instancia__responsable

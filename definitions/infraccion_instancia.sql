@@ -1,19 +1,17 @@
 CREATE TABLE infraccion_instancia (
 
-    sancion MONEY,
-    medidaCautelar TEXT,
-
 
     identificadorAPI INTEGER  NOT NULL,
     identificadorRPI INTEGER NOT NULL,
     fechaI TIMESTAMP NOT NULL,
 
+    infracion__id INTEGER NOT NULL,
 
-    identificadorInf INTEGER NOT NULL,
-
-    identificadorR INTEGER NOT NULL,
+    responsable__id INTEGER NOT NULL,
 
 
+    sancion MONEY,
+    medida_cautelar TEXT,
 
 
     CONSTRAINT infraccion_instancia__clave
@@ -25,8 +23,8 @@ CREATE TABLE infraccion_instancia (
         FOREIGN KEY (identificadorAPI, identificadorRPI, fechaI) REFERENCES incidencia,
 
     CONSTRAINT infraccion_instancia__infraccion
-        FOREIGN KEY (identificadorInf) REFERENCES infraccion,
+        FOREIGN KEY (infracion__id) REFERENCES infraccion,
 
     CONSTRAINT infraccion_instancia__responsable
-        FOREIGN KEY (identificadorR) REFERENCES responsable
+        FOREIGN KEY (responsable__id) REFERENCES responsable
 );

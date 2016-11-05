@@ -1,9 +1,10 @@
 CREATE TABLE responsable (
 
-    identificador INTEGER,
+    id INTEGER,
     nombre VARCHAR(50),
     domicilio TEXT,
 
-    CONSTRAINT claveResponsable
-        PRIMARY KEY (identificador)
+
+    CONSTRAINT responsable__clave
+        PRIMARY KEY (id)
 );

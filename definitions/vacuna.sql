@@ -1,5 +1,6 @@
 CREATE TABLE vacuna (
 
+
     nombre VARCHAR(50),
     obligatoria BOOLEAN,
     periodica BOOLEAN,
