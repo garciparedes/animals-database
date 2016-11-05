@@ -1,4 +1,4 @@
-CREATE TABLE Propiedad(
+CREATE TABLE propiedad (
 
     identificadorA INTEGER NOT NULL,
     identificadorR INTEGER NOT NULL,
@@ -14,9 +14,9 @@ CREATE TABLE Propiedad(
 
 
     CONSTRAINT responsablePropiedad
-        FOREIGN KEY (identificadorR) REFERENCES Responsable,
+        FOREIGN KEY (identificadorR) REFERENCES responsable,
 
 
     CONSTRAINT iAnimalPropiedad
-        FOREIGN KEY (identificadorA) REFERENCES InstanciaAnimal
+        FOREIGN KEY (identificadorA) REFERENCES animal_instancia
 );

@@ -1,4 +1,4 @@
-CREATE TABLE Animal (
+CREATE TABLE animal (
 
     especie VARCHAR(50),
     raza VARCHAR(50),

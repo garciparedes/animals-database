@@ -1,4 +1,4 @@
-CREATE TABLE InstanciaVacuna(
+CREATE TABLE vacuna_instancia(
 
     nombreV VARCHAR(50) NOT NULL,
     identificadorA INTEGER NOT NULL,
@@ -12,8 +12,8 @@ CREATE TABLE InstanciaVacuna(
 
 
     CONSTRAINT vacunaIVacuna
-        FOREIGN KEY (nombreV) REFERENCES Vacuna,
+        FOREIGN KEY (nombreV) REFERENCES vacuna,
 
     CONSTRAINT iAnimalIVacuna
-        FOREIGN KEY (identificadorA) REFERENCES InstanciaAnimal
+        FOREIGN KEY (identificadorA) REFERENCES animal_instancia
 );

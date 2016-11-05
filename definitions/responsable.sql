@@ -1,4 +1,4 @@
-CREATE TABLE Responsable (
+CREATE TABLE responsable (
 
     identificador INTEGER,
     nombre VARCHAR(50),

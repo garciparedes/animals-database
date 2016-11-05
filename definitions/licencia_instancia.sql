@@ -13,8 +13,8 @@ CREATE TABLE InstanciaLicencia(
 
 
     CONSTRAINT responsableILicencia
-        FOREIGN KEY (identificadorR) REFERENCES Responsable,
+        FOREIGN KEY (identificadorR) REFERENCES responsable,
 
     CONSTRAINT licenciaILicencia
-        FOREIGN KEY (identificadorL) REFERENCES Licencia
+        FOREIGN KEY (identificadorL) REFERENCES licencia
 );

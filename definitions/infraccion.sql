@@ -1,4 +1,4 @@
-CREATE TABLE Infraccion (
+CREATE TABLE infraccion (
 
     identificador INTEGER,
     tipo VARCHAR(50),

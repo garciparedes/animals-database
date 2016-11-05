@@ -1,4 +1,4 @@
-CREATE TABLE InstanciaAnimalCensado(
+CREATE TABLE animal_instancia_censado(
 
     identificadorA INTEGER NOT NULL,
     nombre VARCHAR(50),
@@ -14,5 +14,5 @@ CREATE TABLE InstanciaAnimalCensado(
         PRIMARY KEY (identificadorA),
 
     CONSTRAINT extendsIAnimal
-        FOREIGN KEY (identificadorA) REFERENCES InstanciaAnimal
+        FOREIGN KEY (identificadorA) REFERENCES animal_instancia
 );

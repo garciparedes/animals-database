@@ -1,4 +1,4 @@
-CREATE TABLE Vacuna (
+CREATE TABLE vacuna (
 
     nombre VARCHAR(50),
     obligatoria BOOLEAN,

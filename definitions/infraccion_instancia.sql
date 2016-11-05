@@ -1,4 +1,4 @@
-CREATE TABLE InstanciaInfraccion(
+CREATE TABLE infraccion_instancia (
 
     sancion MONEY,
     medidaCautelar TEXT,
@@ -22,11 +22,11 @@ CREATE TABLE InstanciaInfraccion(
 
 
     CONSTRAINT iInfraccionIncidencia
-        FOREIGN KEY (identificadorAPI, identificadorRPI, fechaI) REFERENCES Incidencia,
+        FOREIGN KEY (identificadorAPI, identificadorRPI, fechaI) REFERENCES incidencia,
 
     CONSTRAINT infraccionIInfraccion
-        FOREIGN KEY (identificadorInf) REFERENCES Infraccion,
+        FOREIGN KEY (identificadorInf) REFERENCES infraccion,
 
     CONSTRAINT responsableIInfraccion
-        FOREIGN KEY (identificadorR) REFERENCES Responsable
+        FOREIGN KEY (identificadorR) REFERENCES responsable
 );

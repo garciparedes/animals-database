@@ -1,4 +1,4 @@
-CREATE TABLE Incidencia (
+CREATE TABLE incidencia (
 
     identificadorAP INTEGER NOT NULL,
     identificadorRP INTEGER NOT NULL,
@@ -13,5 +13,5 @@ CREATE TABLE Incidencia (
 
 
     CONSTRAINT propiedadIncidencia
-        FOREIGN KEY (identificadorAP, identificadorRP, fechaInicioP) REFERENCES Propiedad
+        FOREIGN KEY (identificadorAP, identificadorRP, fechaInicioP) REFERENCES propiedad
 );

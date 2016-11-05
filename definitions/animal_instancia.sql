@@ -1,4 +1,4 @@
-CREATE TABLE InstanciaAnimal(
+CREATE TABLE animal_instancia(
 
     identificador INTEGER,
     deCompañia BOOLEAN,
@@ -14,5 +14,5 @@ CREATE TABLE InstanciaAnimal(
         PRIMARY KEY (identificador),
 
     CONSTRAINT animalIAnimal
-        FOREIGN KEY (especie, raza) REFERENCES Animal
+        FOREIGN KEY (especie, raza) REFERENCES animal
 );

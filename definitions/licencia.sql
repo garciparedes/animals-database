@@ -1,4 +1,4 @@
-CREATE TABLE Licencia (
+CREATE TABLE licencia (
 
     identificador INTEGER,
     tipo VARCHAR(50),
