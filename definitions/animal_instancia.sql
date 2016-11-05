@@ -10,9 +10,9 @@ CREATE TABLE animal_instancia(
     especie VARCHAR(50),
     raza VARCHAR(50),
 
-    CONSTRAINT claveIAnimal
+    CONSTRAINT animal_instancia__clave
         PRIMARY KEY (identificador),
 
-    CONSTRAINT animalIAnimal
+    CONSTRAINT animal_instancia__animal
         FOREIGN KEY (especie, raza) REFERENCES animal
 );

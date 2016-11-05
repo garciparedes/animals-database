@@ -10,9 +10,9 @@ CREATE TABLE animal_instancia_censado(
 
 
 
-    CONSTRAINT claveIACensado
+    CONSTRAINT animal_instancia_censado__clave
         PRIMARY KEY (identificadorA),
 
-    CONSTRAINT extendsIAnimal
+    CONSTRAINT animal_instancia_censado_extends_animal_instancia
         FOREIGN KEY (identificadorA) REFERENCES animal_instancia
 );

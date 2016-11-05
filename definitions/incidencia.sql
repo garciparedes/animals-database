@@ -8,10 +8,10 @@ CREATE TABLE incidencia (
     tipo VARCHAR(50),
 
 
-    CONSTRAINT claveIncidencia
+    CONSTRAINT incidencia__clave
         PRIMARY KEY (identificadorAP, identificadorRP, fecha),
 
 
-    CONSTRAINT propiedadIncidencia
+    CONSTRAINT incidencia__propiedad
         FOREIGN KEY (identificadorAP, identificadorRP, fechaInicioP) REFERENCES propiedad
 );

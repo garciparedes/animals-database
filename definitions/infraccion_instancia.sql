@@ -16,17 +16,17 @@ CREATE TABLE infraccion_instancia (
 
 
 
-    CONSTRAINT claveIInfracción
+    CONSTRAINT infraccion_instancia__clave
         PRIMARY KEY (identificadorAPI, identificadorRPI, fechaI),
 
 
 
-    CONSTRAINT iInfraccionIncidencia
+    CONSTRAINT infraccion_instancia__incidencia
         FOREIGN KEY (identificadorAPI, identificadorRPI, fechaI) REFERENCES incidencia,
 
-    CONSTRAINT infraccionIInfraccion
+    CONSTRAINT infraccion_instancia__infraccion
         FOREIGN KEY (identificadorInf) REFERENCES infraccion,
 
-    CONSTRAINT responsableIInfraccion
+    CONSTRAINT infraccion_instancia__responsable
         FOREIGN KEY (identificadorR) REFERENCES responsable
 );

@@ -4,7 +4,7 @@ CREATE TABLE animal (
     raza VARCHAR(50),
     descripcion TEXT,
 
-    CONSTRAINT claveAnimal
+    CONSTRAINT animal__clave
         PRIMARY KEY (especie, raza)
 );
 

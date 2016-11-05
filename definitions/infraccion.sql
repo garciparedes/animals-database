@@ -5,6 +5,6 @@ CREATE TABLE infraccion (
     descripcion TEXT,
 
 
-    CONSTRAINT claveInfraccion
+    CONSTRAINT infraccion__clave
         PRIMARY KEY (identificador)
 );

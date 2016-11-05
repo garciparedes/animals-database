@@ -7,6 +7,6 @@ CREATE TABLE licencia (
 
 
 
-    CONSTRAINT claveLicencia
+    CONSTRAINT licencia__clave
         PRIMARY KEY (identificador)
 );
