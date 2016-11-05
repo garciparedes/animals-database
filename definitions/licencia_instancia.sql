@@ -1,8 +1,9 @@
 CREATE TABLE licencia_instancia(
 
 
-    identificadorR INTEGER NOT NULL,
-    identificadorL INTEGER NOT NULL,
+    responsable__id INTEGER NOT NULL,
+
+    licencia__id INTEGER NOT NULL,
 
 
     num_licencia INTEGER,
@@ -15,8 +16,8 @@ CREATE TABLE licencia_instancia(
 
 
     CONSTRAINT licencia_instancia__responsable
-        FOREIGN KEY (identificadorR) REFERENCES responsable,
+        FOREIGN KEY (responsable__id) REFERENCES responsable,
 
     CONSTRAINT licencia_instancia__licencia
-        FOREIGN KEY (identificadorL) REFERENCES licencia
+        FOREIGN KEY (licencia__id) REFERENCES licencia
 );

@@ -1,5 +1,6 @@
 CREATE TABLE infraccion (
 
+
     id INTEGER,
     tipo VARCHAR(50),
     descripcion TEXT,
