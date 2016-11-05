@@ -1,4 +1,4 @@
-CREATE TABLE InstanciaLicencia(
+CREATE TABLE licencia_instancia(
 
     identificadorR INTEGER NOT NULL,
     identificadorL INTEGER NOT NULL,
@@ -8,13 +8,13 @@ CREATE TABLE InstanciaLicencia(
     fechaFin TIMESTAMP,
 
 
-    CONSTRAINT claveILicencia
+    CONSTRAINT licencia_instancia__clave
         PRIMARY KEY (numLicencia, fechaInicio),
 
 
-    CONSTRAINT responsableILicencia
+    CONSTRAINT licencia_instancia__responsable
         FOREIGN KEY (identificadorR) REFERENCES responsable,
 
-    CONSTRAINT licenciaILicencia
+    CONSTRAINT licencia_instancia__licencia
         FOREIGN KEY (identificadorL) REFERENCES licencia
 );

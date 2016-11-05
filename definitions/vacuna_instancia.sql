@@ -7,13 +7,13 @@ CREATE TABLE vacuna_instancia(
     fechaFinValidez TIMESTAMP,
 
 
-    CONSTRAINT claveIVacuna
+    CONSTRAINT vacuna_instancia__clvae
         PRIMARY KEY (nombreV, fechaAplicacion, identificadorA),
 
 
-    CONSTRAINT vacunaIVacuna
+    CONSTRAINT vacuna_instancia__vacuna
         FOREIGN KEY (nombreV) REFERENCES vacuna,
 
-    CONSTRAINT iAnimalIVacuna
+    CONSTRAINT vacuna_instancia__animal_instancia
         FOREIGN KEY (identificadorA) REFERENCES animal_instancia
 );

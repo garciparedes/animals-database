@@ -8,15 +8,15 @@ CREATE TABLE propiedad (
 
 
 
-    CONSTRAINT clavePropiedad
+    CONSTRAINT propiedad__clave
         PRIMARY KEY (identificadorA, identificadorR, fechaInicio),
 
 
 
-    CONSTRAINT responsablePropiedad
+    CONSTRAINT propiedad__responsable
         FOREIGN KEY (identificadorR) REFERENCES responsable,
 
 
-    CONSTRAINT iAnimalPropiedad
+    CONSTRAINT propiedad__animal_instancia
         FOREIGN KEY (identificadorA) REFERENCES animal_instancia
 );

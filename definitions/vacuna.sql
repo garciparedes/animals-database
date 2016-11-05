@@ -6,6 +6,6 @@ CREATE TABLE vacuna (
     descripcion TEXT,
 
 
-    CONSTRAINT claveVacuna
+    CONSTRAINT vacuna__clave
         PRIMARY KEY (nombre)
 );
