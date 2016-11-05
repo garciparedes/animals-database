@@ -1,5 +1,7 @@
 CREATE TABLE animal_instancia(
 
+    animal__especie VARCHAR(50) NOT NULL,
+    animal__raza VARCHAR(50) NOT NULL,
 
     id INTEGER,
     de_compañia BOOLEAN,
@@ -8,8 +10,6 @@ CREATE TABLE animal_instancia(
     fecha_muerte TIMESTAMP,
     exotico BOOLEAN,
     extranjero BOOLEAN,
-    especie VARCHAR(50),
-    raza VARCHAR(50),
 
 
     CONSTRAINT animal_instancia__clave
@@ -17,5 +17,5 @@ CREATE TABLE animal_instancia(
 
 
     CONSTRAINT animal_instancia__animal
-        FOREIGN KEY (especie, raza) REFERENCES animal
+        FOREIGN KEY (animal__especie, animal__raza) REFERENCES animal
 );

@@ -1,5 +1,6 @@
 CREATE TABLE vacuna_instancia(
 
+
     vacuna__nombre VARCHAR(50) NOT NULL,
 
     animal_instancia__id INTEGER NOT NULL,

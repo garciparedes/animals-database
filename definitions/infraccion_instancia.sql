@@ -1,11 +1,11 @@
 CREATE TABLE infraccion_instancia (
 
 
-    identificadorAPI INTEGER  NOT NULL,
-    identificadorRPI INTEGER NOT NULL,
-    fechaI TIMESTAMP NOT NULL,
+    incidencia__propiedad__animal_instancia__id INTEGER  NOT NULL,
+    incidencia__propiedad__responsable__id INTEGER NOT NULL,
+    incidencia__fecha TIMESTAMP NOT NULL,
 
-    infracion__id INTEGER NOT NULL,
+    infracion__nombre VARCHAR(50) NOT NULL,
 
     responsable__id INTEGER NOT NULL,
 
@@ -15,15 +15,23 @@ CREATE TABLE infraccion_instancia (
 
 
     CONSTRAINT infraccion_instancia__clave
-        PRIMARY KEY (identificadorAPI, identificadorRPI, fechaI),
+        PRIMARY KEY (
+            incidencia__propiedad__animal_instancia__id,
+            incidencia__propiedad__responsable__id,
+            incidencia__fecha
+        ),
 
 
 
     CONSTRAINT infraccion_instancia__incidencia
-        FOREIGN KEY (identificadorAPI, identificadorRPI, fechaI) REFERENCES incidencia,
+        FOREIGN KEY (
+            incidencia__propiedad__animal_instancia__id,
+            incidencia__propiedad__responsable__id,
+            incidencia__fecha
+    ) REFERENCES incidencia,
 
     CONSTRAINT infraccion_instancia__infraccion
-        FOREIGN KEY (infracion__id) REFERENCES infraccion,
+        FOREIGN KEY (infracion__nombre) REFERENCES infraccion,
 
     CONSTRAINT infraccion_instancia__responsable
         FOREIGN KEY (responsable__id) REFERENCES responsable

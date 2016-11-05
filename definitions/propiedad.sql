@@ -2,6 +2,7 @@ CREATE TABLE propiedad (
 
 
     animal_instancia__id INTEGER NOT NULL,
+
     responsable__id INTEGER NOT NULL,
 
 
@@ -10,7 +11,11 @@ CREATE TABLE propiedad (
 
 
     CONSTRAINT propiedad__clave
-        PRIMARY KEY (animal_instancia__id, responsable__id, fecha_inicio),
+        PRIMARY KEY (
+            animal_instancia__id,
+            responsable__id,
+            fecha_inicio
+        ),
 
 
     CONSTRAINT propiedad__responsable

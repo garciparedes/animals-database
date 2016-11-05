@@ -1,11 +1,11 @@
 CREATE TABLE infraccion (
 
 
-    id INTEGER,
+    nombre VARCHAR(50),
     tipo VARCHAR(50),
     descripcion TEXT,
 
 
     CONSTRAINT infraccion__clave
-        PRIMARY KEY (id)
+        PRIMARY KEY (nombre)
 );

@@ -3,7 +3,7 @@ CREATE TABLE licencia_instancia(
 
     responsable__id INTEGER NOT NULL,
 
-    licencia__id INTEGER NOT NULL,
+    licencia__nombre VARCHAR(50) NOT NULL,
 
 
     num_licencia INTEGER,
@@ -19,5 +19,5 @@ CREATE TABLE licencia_instancia(
         FOREIGN KEY (responsable__id) REFERENCES responsable,
 
     CONSTRAINT licencia_instancia__licencia
-        FOREIGN KEY (licencia__id) REFERENCES licencia
+        FOREIGN KEY (licencia__nombre) REFERENCES licencia
 );
