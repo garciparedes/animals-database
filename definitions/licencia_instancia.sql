@@ -1,23 +1,34 @@
 CREATE TABLE licencia_instancia(
 
 
-    responsable__id INTEGER NOT NULL,
+    /*
+    Clave foranea hacia responsable
+     */
+    id_responsable INTEGER NOT NULL,
 
-    licencia__nombre VARCHAR(50) NOT NULL,
+
+    /*
+    Clave foranea hacia licencia
+     */
+    nombre_licencia VARCHAR(50) NOT NULL,
 
 
+    /*
+    Atributos propios de instancia licencia_instancia
+     */
     num_licencia INTEGER,
-    fecha_inicio TIMESTAMP,
-    fecha_fin TIMESTAMP,
+    inicio_licencia TIMESTAMP,
+    fin_licencia TIMESTAMP,
+
 
 
     CONSTRAINT licencia_instancia__clave
-        PRIMARY KEY (num_licencia, fecha_inicio),
+        PRIMARY KEY (num_licencia, inicio_licencia),
 
 
     CONSTRAINT licencia_instancia__responsable
-        FOREIGN KEY (responsable__id) REFERENCES responsable,
+        FOREIGN KEY (id_responsable) REFERENCES responsable,
 
     CONSTRAINT licencia_instancia__licencia
-        FOREIGN KEY (licencia__nombre) REFERENCES licencia
+        FOREIGN KEY (nombre_licencia) REFERENCES licencia
 );

@@ -1,26 +1,32 @@
 CREATE TABLE propiedad (
 
+    /*
+    Clave foranea hacia animal
+     */
+    id_animal INTEGER NOT NULL,
 
-    animal__id INTEGER NOT NULL,
 
-    responsable__id INTEGER NOT NULL,
+    /*
+    Clave foranea hacia responsable
+     */
+    id_responsable INTEGER NOT NULL,
 
 
-    fecha_inicio TIMESTAMP,
-    fecha_fin TIMESTAMP,
+    /*
+    Atributos propios de propiedad
+     */
+    inicio_propiedad TIMESTAMP,
+    fin_propiedad TIMESTAMP,
+
 
 
     CONSTRAINT propiedad__clave
-        PRIMARY KEY (
-            animal__id,
-            responsable__id,
-            fecha_inicio
-        ),
+        PRIMARY KEY (id_animal, id_responsable, inicio_propiedad),
 
 
     CONSTRAINT propiedad__responsable
-        FOREIGN KEY (responsable__id) REFERENCES responsable,
+        FOREIGN KEY (id_responsable) REFERENCES responsable,
 
     CONSTRAINT propiedad__animal
-        FOREIGN KEY (animal__id) REFERENCES animal
+        FOREIGN KEY (id_animal) REFERENCES animal
 );

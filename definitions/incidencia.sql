@@ -1,43 +1,45 @@
 CREATE TABLE incidencia (
 
+    /*
+    Clave foranea hacia propiedad
+     */
+    id_animal INTEGER NOT NULL,
+    id_responsable INTEGER NOT NULL,
+    inicio_propiedad TIMESTAMP NOT NULL,
 
-    fecha TIMESTAMP,
+
+    /*
+    Clave foranea hacia infraccion
+     */
+    nombre_infraccion VARCHAR(50) NOT NULL,
+
+
+    /*
+    Clave foranea hacia de tenedor
+     */
+    id_tenedor INTEGER,
+
+
+    /*
+    Atributos propios de incidencia
+     */
+    fecha_incidencia TIMESTAMP,
     tipo VARCHAR(50),
+    sancion DECIMAL,
+    medida_cautelar VARCHAR,
 
 
-    propiedad__animal__id INTEGER  NOT NULL,
-    propiedad__responsable__id INTEGER NOT NULL,
-    propiedad__fecha_inicio TIMESTAMP NOT NULL,
 
-    infracion__nombre VARCHAR(50) NOT NULL,
-
-    fecha TIMESTAMP,
-    tenedor__id INTEGER,
-
-
-    sancion MONEY,
-    medida_cautelar TEXT,
-
-
-    CONSTRAINT infraccion_instancia__clave
-        PRIMARY KEY (
-            propiedad__animal__id,
-            propiedad__responsable__id,
-            fecha
-        ),
-
+    CONSTRAINT incidencia__clave
+        PRIMARY KEY (id_animal, id_responsable,fecha_incidencia),
 
 
     CONSTRAINT incidencia__propiedad
-        FOREIGN KEY (
-            propiedad__animal__id,
-            propiedad__responsable__id,
-            propiedad__fecha_inicio
-    ) REFERENCES propiedad,
+        FOREIGN KEY (id_animal, id_responsable, inicio_propiedad) REFERENCES propiedad,
 
-    CONSTRAINT infraccion_instancia__infraccion
-        FOREIGN KEY (infracion__nombre) REFERENCES infraccion,
+    CONSTRAINT incidencia__infraccion
+        FOREIGN KEY (nombre_infraccion) REFERENCES infraccion,
 
-    CONSTRAINT infraccion_instancia__tenedor
-        FOREIGN KEY (tenedor__id) REFERENCES responsable
+    CONSTRAINT incidencia__tenedor
+        FOREIGN KEY (id_tenedor) REFERENCES responsable
 );

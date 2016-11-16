@@ -1,10 +1,15 @@
 CREATE TABLE responsable (
 
-    id INTEGER,
-    nombre VARCHAR(50),
-    domicilio TEXT,
+
+    /*
+    Atributos propios de responsable
+     */
+    id_responsable INTEGER,
+    nombre_responsable VARCHAR(50),
+    domicilio_responsable VARCHAR,
+
 
 
     CONSTRAINT responsable__clave
-        PRIMARY KEY (id)
+        PRIMARY KEY (id_responsable)
 );
