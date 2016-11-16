@@ -7,6 +7,8 @@ Contenido
 ----
 [Diagrama Entidad-Relación](https://www.lucidchart.com/invitations/accept/31a58330-f67c-4ad3-b4f0-408a55879ea2)
 
+[Diagrama Relacional](https://www.lucidchart.com/invitations/accept/84017ff9-4183-4e6c-a675-104e0a38301f)
+
 [Definiciones](definitions/)
 
 [Consultas](queries/)
