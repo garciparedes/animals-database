@@ -12,7 +12,7 @@ CREATE TABLE animal_censado(
     nombre VARCHAR(50),
     aptitud VARCHAR(50),
     capa VARCHAR(50),
-    domicilio VARCHAR(50),
+    domicilio VARCHAR(512),
     idchip INTEGER,
     lazarillo BIT,
 

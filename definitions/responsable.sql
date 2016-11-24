@@ -6,7 +6,7 @@ CREATE TABLE responsable (
      */
     id_responsable INTEGER,
     nombre_responsable VARCHAR(50),
-    domicilio_responsable VARCHAR,
+    domicilio_responsable VARCHAR(512),
 
 
 

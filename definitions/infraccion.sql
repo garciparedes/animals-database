@@ -5,7 +5,7 @@ CREATE TABLE infraccion (
      */
     nombre_infraccion VARCHAR(50),
     tipo_infraccion VARCHAR(50),
-    descripcion_infraccion VARCHAR,
+    descripcion_infraccion VARCHAR(512),
 
 
 

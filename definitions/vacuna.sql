@@ -6,7 +6,7 @@ CREATE TABLE vacuna (
     nombre_vacuna VARCHAR(50),
     obligatoria_vacuna BIT,
     periodica_vacuna BIT,
-    descripcion_vacuna VARCHAR,
+    descripcion_vacuna VARCHAR(512),
 
 
 

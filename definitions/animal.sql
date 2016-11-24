@@ -1,4 +1,4 @@
-CREATE TABLE animal(
+CREATE TABLE animal (
 
     /*
     Atributos propios de animal

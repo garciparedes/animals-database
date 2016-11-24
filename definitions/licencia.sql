@@ -5,7 +5,7 @@ CREATE TABLE licencia (
      */
     nombre_licencia VARCHAR(50),
     tipo_licencia VARCHAR(50),
-    descripcion_licencia VARCHAR,
+    descripcion_licencia VARCHAR(512),
 
 
 

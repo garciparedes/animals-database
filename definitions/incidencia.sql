@@ -26,7 +26,7 @@ CREATE TABLE incidencia (
     fecha_incidencia TIMESTAMP,
     tipo VARCHAR(50),
     sancion DECIMAL,
-    medida_cautelar VARCHAR,
+    medida_cautelar VARCHAR(512),
 
 
 
