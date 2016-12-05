@@ -4,7 +4,6 @@ CREATE TABLE incidencia (
     Clave foranea hacia propiedad
      */
     id_animal         INTEGER     NOT NULL,
-    id_responsable    INTEGER     NOT NULL,
     inicio_propiedad  TIMESTAMP   NOT NULL,
 
 
@@ -27,12 +26,12 @@ CREATE TABLE incidencia (
 
 
     CONSTRAINT incidencia__clave
-    PRIMARY KEY (id_animal, id_responsable, fecha, nombre),
+    PRIMARY KEY (id_animal, fecha, nombre),
 
 
     CONSTRAINT incidencia__propiedad
-    FOREIGN KEY (id_animal, id_responsable, inicio_propiedad)
-    REFERENCES propiedad (id_animal, id_responsable, inicio_propiedad),
+    FOREIGN KEY (id_animal, inicio_propiedad)
+    REFERENCES propiedad (id_animal, inicio_propiedad),
 
 
 

@@ -11,5 +11,14 @@ CREATE TABLE organizacion (
 
     CONSTRAINT organizacion__responsable
     FOREIGN KEY (id_responsable)
-    REFERENCES responsable (id_responsable)
+    REFERENCES responsable (id_responsable),
+
+    CONSTRAINT unique_responsable_organizacion
+    CHECK (
+        NOT exists(
+            SELECT p.id_responsable
+            FROM persona p
+            WHERE p.id_responsable = id_responsable
+        )
+    )
 );

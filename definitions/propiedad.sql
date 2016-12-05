@@ -19,8 +19,10 @@ CREATE TABLE propiedad (
     fin              TIMESTAMP NULL DEFAULT NULL,
 
 
+    UNIQUE (id_animal, id_responsable, inicio_propiedad),
+
     CONSTRAINT propiedad__clave
-    PRIMARY KEY (id_animal, id_responsable, inicio_propiedad),
+    PRIMARY KEY (id_animal, inicio_propiedad),
 
 
     CONSTRAINT propiedad__responsable

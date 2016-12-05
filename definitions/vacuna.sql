@@ -1,14 +1,25 @@
 CREATE TABLE vacuna (
 
+
     /*
-    Atributos propios de vacuna
+    Clave foranea hacia animal
      */
-    nombre_vacuna VARCHAR(50) NOT NULL,
-    obligatoria   BIT         NOT NULL,
-    periodica     BIT         NOT NULL,
-    descripcion   VARCHAR(512),
+    id_animal     INTEGER,
 
 
-    CONSTRAINT vacuna__clave
-    PRIMARY KEY (nombre_vacuna)
+    /*
+    Atributos propios de vacuna_instancia
+     */
+    nombre_vacuna VARCHAR(50),
+    aplicacion    DATE,
+    fin           DATE,
+
+
+    CONSTRAINT vacuna_instancia__clave
+    PRIMARY KEY (nombre_vacuna, aplicacion, id_animal),
+
+
+    CONSTRAINT vacuna_instancia__animal
+    FOREIGN KEY (id_animal)
+    REFERENCES animal (id_animal)
 );

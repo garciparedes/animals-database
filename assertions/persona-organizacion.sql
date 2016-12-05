@@ -1,4 +1,4 @@
 CREATE ASSERTION persona_organizacion_unique
 CHECK((SELECT COUNT(*)
-        FROM  Persona P, Organizacion O
-        WHERE P.id_responsable = O.id_responsable) = 0);
+        FROM  persona p, organizacion o
+        WHERE p.id_responsable = o.id_responsable) = 0);
