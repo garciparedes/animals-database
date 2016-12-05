@@ -5,14 +5,17 @@ CREATE TABLE persona (
     apellidos      VARCHAR(100) NOT NULL,
     nacimiento     DATE         NOT NULL,
     delitos        BIT          NOT NULL,
-    seguro_rc      DATE          NOT NULL,
+    seguro_rc      DATE,
 
     CONSTRAINT persona__clave
     PRIMARY KEY (id_responsable, dni),
 
     CONSTRAINT persona__responsable
     FOREIGN KEY (id_responsable)
-    REFERENCES responsable (id_responsable),
+    REFERENCES responsable (id_responsable)
+    /*
+    ,
+
 
     CONSTRAINT unique_responsable_persona
     CHECK (
@@ -22,4 +25,19 @@ CREATE TABLE persona (
             WHERE o.id_responsable = id_responsable
         )
     )
-)
+    */
+);
+
+CREATE TRIGGER unique_responsable_persona
+BEFORE INSERT ON persona
+FOR EACH ROW
+    BEGIN
+        IF NEW.id_responsable NOT IN (
+            SELECT o.id_responsable
+            FROM organizacion o -- CHANGED THE ALIAS TO A
+            WHERE (NEW.id_responsable = o.id_responsable)
+        )
+        THEN -- MISSING THEN
+            CALL 'Insert not allowed';
+        END IF;
+    END;
