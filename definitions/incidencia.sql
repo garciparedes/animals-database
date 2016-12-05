@@ -8,10 +8,6 @@ CREATE TABLE incidencia (
     inicio_propiedad  TIMESTAMP   NOT NULL,
 
 
-    /*
-    Clave foranea hacia infraccion
-     */
-    nombre_infraccion VARCHAR(50),
 
 
     /*
@@ -23,6 +19,7 @@ CREATE TABLE incidencia (
     /*
     Atributos propios de incidencia
      */
+    nombre VARCHAR(50),
     fecha             TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     tipo              VARCHAR(50) NOT NULL,
     sancion           DECIMAL,
@@ -30,17 +27,13 @@ CREATE TABLE incidencia (
 
 
     CONSTRAINT incidencia__clave
-    PRIMARY KEY (id_animal, id_responsable, fecha),
+    PRIMARY KEY (id_animal, id_responsable, fecha, nombre),
 
 
     CONSTRAINT incidencia__propiedad
     FOREIGN KEY (id_animal, id_responsable, inicio_propiedad)
     REFERENCES propiedad (id_animal, id_responsable, inicio_propiedad),
 
-
-    CONSTRAINT incidencia__infraccion
-    FOREIGN KEY (nombre_infraccion)
-    REFERENCES infraccion (nombre_infraccion),
 
 
     CONSTRAINT incidencia__tenedor
