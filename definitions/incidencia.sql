@@ -11,7 +11,7 @@ CREATE TABLE incidencia (
     /*
     Clave foranea hacia infraccion
      */
-    nombre_infraccion VARCHAR(50) NOT NULL,
+    nombre_infraccion VARCHAR(50),
 
 
     /*
@@ -23,7 +23,7 @@ CREATE TABLE incidencia (
     /*
     Atributos propios de incidencia
      */
-    fecha             TIMESTAMP   DEFAULT CURRENT_TIMESTAMP,
+    fecha             TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     tipo              VARCHAR(50) NOT NULL,
     sancion           DECIMAL,
     medida_cautelar   VARCHAR(512),

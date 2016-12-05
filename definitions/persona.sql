@@ -1,5 +1,5 @@
 CREATE TABLE persona (
-    id_responsable INTEGER,
+    id_responsable INTEGER      NOT NULL,
 
     dni            VARCHAR(20)  NOT NULL,
     apellidos      VARCHAR(100) NOT NULL,

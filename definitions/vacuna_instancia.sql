@@ -15,7 +15,7 @@ CREATE TABLE vacuna_instancia (
     Atributos propios de vacuna_instancia
      */
     aplicacion    DATE,
-    fin           DATE,
+    fin           DATE NOT NULL ,
 
 
     CONSTRAINT vacuna_instancia__clave
