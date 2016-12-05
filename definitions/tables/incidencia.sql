@@ -23,7 +23,7 @@ CREATE TABLE incidencia (
 
 
     CONSTRAINT incidencia__clave
-    PRIMARY KEY (id_animal, fecha, nombre),
+    PRIMARY KEY (id_animal, fecha),
 
 
     CONSTRAINT incidencia__propiedad
