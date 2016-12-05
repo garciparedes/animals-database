@@ -31,5 +31,12 @@ CREATE TABLE propiedad (
 
     CONSTRAINT propiedad__animal
     FOREIGN KEY (id_animal)
-    REFERENCES animal (id_animal)
+    REFERENCES animal (id_animal),
+
+
+    CONSTRAINT propiedad__date
+    CHECK (NOT EXISTS(
+        SELECT *
+        WHERE inicio_propiedad > fin
+    ))
 );

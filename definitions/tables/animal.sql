@@ -3,7 +3,7 @@ CREATE TABLE animal (
     /*
     Atributos propios de animal
      */
-    id_animal   INTEGER,
+    id_animal   INTEGER AUTO_INCREMENT,
 
     especie     VARCHAR(50) NOT NULL,
     raza        VARCHAR(50) NOT NULL,

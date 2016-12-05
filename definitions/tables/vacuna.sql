@@ -11,8 +11,8 @@ CREATE TABLE vacuna (
     Atributos propios de vacuna_instancia
      */
     nombre_vacuna VARCHAR(50),
-    aplicacion    DATE,
-    fin           DATE,
+    aplicacion    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fin           TIMESTAMP NULL DEFAULT NULL ,
 
 
     CONSTRAINT vacuna_instancia__clave

@@ -14,7 +14,6 @@ CREATE TABLE licencia (
     num_licencia    INTEGER,
     inicio          DATE,
 
-    tipo            VARCHAR(50) NOT NULL,
     fin             DATE        NOT NULL,
 
 

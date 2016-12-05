@@ -1,4 +1,4 @@
-CREATE VIEW view_animal_censado
+CREATE OR REPLACE VIEW view_animal_censado
 AS
     SELECT *
     FROM

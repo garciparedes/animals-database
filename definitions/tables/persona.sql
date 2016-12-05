@@ -13,31 +13,5 @@ CREATE TABLE persona (
     CONSTRAINT persona__responsable
     FOREIGN KEY (id_responsable)
     REFERENCES responsable (id_responsable)
-    /*
-    ,
 
-
-    CONSTRAINT unique_responsable_persona
-    CHECK (
-        NOT exists(
-            SELECT o.id_responsable
-            FROM organizacion o
-            WHERE o.id_responsable = id_responsable
-        )
-    )
-    */
 );
-
-CREATE TRIGGER unique_responsable_persona
-BEFORE INSERT ON persona
-FOR EACH ROW
-    BEGIN
-        IF NEW.id_responsable NOT IN (
-            SELECT o.id_responsable
-            FROM organizacion o -- CHANGED THE ALIAS TO A
-            WHERE (NEW.id_responsable = o.id_responsable)
-        )
-        THEN -- MISSING THEN
-            CALL 'Insert not allowed';
-        END IF;
-    END;

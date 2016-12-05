@@ -1,4 +1,4 @@
-CREATE VIEW view_persona
+CREATE OR REPLACE VIEW view_persona
 AS
     SELECT *
     FROM

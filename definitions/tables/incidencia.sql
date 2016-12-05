@@ -6,9 +6,6 @@ CREATE TABLE incidencia (
     id_animal         INTEGER     NOT NULL,
     inicio_propiedad  TIMESTAMP   NOT NULL,
 
-
-
-
     /*
     Clave foranea hacia de tenedor
      */
