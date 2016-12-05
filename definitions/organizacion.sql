@@ -1,14 +1,15 @@
 CREATE TABLE organizacion (
 
-    id_responsable INTEGER NOT NULL ,
+    id_responsable INTEGER     NOT NULL,
 
-    nif            VARCHAR(20),
-    tipo           VARCHAR(50),
+    nif            VARCHAR(20) NOT NULL,
+    tipo           VARCHAR(50) NOT NULL,
 
     CONSTRAINT organizacion__clave
     PRIMARY KEY (id_responsable, nif),
 
 
     CONSTRAINT organizacion__responsable
-    FOREIGN KEY (id_responsable) REFERENCES responsable
+    FOREIGN KEY (id_responsable)
+    REFERENCES responsable (id_responsable)
 );
