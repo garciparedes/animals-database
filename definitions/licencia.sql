@@ -10,7 +10,7 @@ CREATE TABLE licencia (
     /*
     Atributos propios de licencia
      */
-    nombre_licencia VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
     num_licencia    INTEGER,
     inicio          DATE,
 
@@ -19,7 +19,7 @@ CREATE TABLE licencia (
 
 
     CONSTRAINT licencia_instancia__clave
-    PRIMARY KEY (num_licencia, inicio),
+    PRIMARY KEY (nombre, num_licencia, inicio),
 
 
     CONSTRAINT licencia_instancia__responsable
