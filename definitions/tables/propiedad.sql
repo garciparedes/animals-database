@@ -15,7 +15,7 @@ CREATE TABLE propiedad (
     /*
     Atributos propios de propiedad
      */
-    inicio_propiedad TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    inicio_propiedad TIMESTAMP      DEFAULT CURRENT_TIMESTAMP,
     fin              TIMESTAMP NULL DEFAULT NULL,
 
 
@@ -35,8 +35,10 @@ CREATE TABLE propiedad (
 
 
     CONSTRAINT propiedad__date
-    CHECK (NOT EXISTS(
-        SELECT *
-        WHERE inicio_propiedad > fin
-    ))
+    CHECK (
+        CASE WHEN fin IS NOT NULL
+            THEN
+                inicio_propiedad <= fin
+        END
+    )
 );

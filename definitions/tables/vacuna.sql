@@ -21,5 +21,15 @@ CREATE TABLE vacuna (
 
     CONSTRAINT vacuna_instancia__animal
     FOREIGN KEY (id_animal)
-    REFERENCES animal (id_animal)
+    REFERENCES animal (id_animal),
+
+
+
+    CONSTRAINT vacuna__fecha
+    CHECK (
+        CASE WHEN fin IS NOT NULL
+            THEN
+                aplicacion <= fin
+        END
+    )
 );

@@ -5,7 +5,7 @@ AS
         a.raza,
         a.aptitud,
         a.peligroso,
-        a.fecha_nacimiento,
+        a.nacimiento,
         a.domicilio   AS domicilio_animal,
         per.nombre,
         per.apellidos,

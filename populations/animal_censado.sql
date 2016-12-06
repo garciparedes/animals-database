@@ -8,7 +8,7 @@ INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, 
     (10,    'perro',    'mastin',   TRUE,   TRUE,   FALSE,  FALSE);
 
 
-INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, fecha_nacimiento)
+INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
 VALUES
     (1, 'paco', 'tranquilo', 'blanco', 'la rua', '1234', '1', FALSE, '2005-11-10'),
     (2, 'calcetines', 'tranquilo', 'blanco', 'la rua', '12342', '2', FALSE, '2005-11-10'),

@@ -11,5 +11,14 @@ CREATE TABLE organizacion (
 
     CONSTRAINT organizacion__responsable
     FOREIGN KEY (id_responsable)
-    REFERENCES responsable (id_responsable)
+    REFERENCES responsable (id_responsable),
+
+
+    CONSTRAINT organizacion__tipo
+    CHECK (
+        tipo = 'explotacion' OR
+        tipo = 'zoo' OR
+        tipo = 'circo' OR
+        tipo = 'clinica'
+    )
 );

@@ -18,11 +18,13 @@ CREATE TABLE animal_censado (
     lazarillo        BIT          NOT NULL,
 
 
-    fecha_nacimiento DATE         NOT NULL,
-    fecha_muerte     DATE,
+    nacimiento DATE         NOT NULL,
+    muerte     DATE,
+
 
     CONSTRAINT animal_censado__unique_censal
     UNIQUE (id_censal),
+
 
     CONSTRAINT animal_censado__unique_chip
     UNIQUE (id_chip),
@@ -33,5 +35,14 @@ CREATE TABLE animal_censado (
 
     CONSTRAINT animal_censado_extends_animal
     FOREIGN KEY (id_animal)
-    REFERENCES animal (id_animal)
+    REFERENCES animal (id_animal),
+
+
+    CONSTRAINT animal__fecha
+    CHECK (
+        CASE WHEN muerte IS NOT NULL
+            THEN
+                nacimiento <= muerte
+        END
+    )
 );

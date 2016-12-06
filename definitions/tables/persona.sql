@@ -15,6 +15,9 @@ CREATE TABLE persona (
 
     CONSTRAINT persona__responsable
     FOREIGN KEY (id_responsable)
-    REFERENCES responsable (id_responsable)
+    REFERENCES responsable (id_responsable),
 
+
+    CONSTRAINT persona__nacimiento
+    CHECK (nacimiento <= CURRENT_TIMESTAMP)
 );
