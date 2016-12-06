@@ -7,8 +7,11 @@ CREATE TABLE persona (
     delitos        BIT          NOT NULL,
     seguro_rc      DATE,
 
+    CONSTRAINT persona__unique_dni
+    UNIQUE (dni),
+
     CONSTRAINT persona__clave
-    PRIMARY KEY (id_responsable, dni),
+    PRIMARY KEY (id_responsable),
 
     CONSTRAINT persona__responsable
     FOREIGN KEY (id_responsable)

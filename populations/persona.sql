@@ -1,5 +1,31 @@
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUES
+    (1 ,'sergio', 'la paz 7 3ºc'),
+    (2 ,'javier', 'la paz 7 3ºc'),
+    (4,'fernando', 'la paz 7 3ºc'),
+    (5, 'alberto', 'la paz 7 3ºc'),
+    (6,'juan', 'la paz 7 3ºc'),
+    (7,'mario', 'la paz 7 3ºc'),
+    (8,'cristian', 'la paz 7 3ºc'),
+    (9,'maria', 'la paz 7 3ºc'),
+    (10,'silvia', 'la paz 7 3ºc'),
+    (11,'jose', 'la paz 7 3ºc'),
+    (12,'lucia', 'la paz 7 3ºc'),
+    (13,'mariano', 'la paz 7 3ºc'),
+    (14,'eutiquio', 'la paz 7 3ºc'),
+    (15,'carlos', 'la paz 7 3ºc');
+
 INSERT INTO persona (id_responsable, dni, apellidos, nacimiento, delitos, seguro_rc) VALUES
-    (1, '71954504q', 'garcia prado', '1994-08-11', FALSE, NULL),
-    (2, '71954504q', 'garcia prado', '1994-08-11', FALSE, NULL),
-    (4, '71954504q', 'villagrá lobete', '1994-08-11', FALSE, NULL),
-    (5, '71954504q', 'villagrá lobete', '1994-08-11', FALSE, NULL);
+    (1, '07253620H', 'garcia prado', '1994-08-11', FALSE, '2020-10-02'),
+    (2, '72911354C', 'sánchez', '1990-08-11', FALSE, '2020-10-04'),
+    (4, '28504321F', 'lopez', '1992-08-11', FALSE , '2008-10-12'),
+    (5, '30446307B', 'fernandez', '1997-08-11', FALSE,'2020-10-21'),
+    (6, '42441622K', 'hoyos', '1986-08-11', FALSE, NULL),
+    (7, '37241668E', 'romero', '1975-08-11', TRUE, NULL),
+    (8, '76071821B', 'fernandez', '1954-08-11', FALSE, '2016-12-10'),
+    (9, '51469358G', 'ramirez', '200-08-11', FALSE, NULL),
+    (10, '90307191Z', 'hernández', '1964-08-11', TRUE , '2020-10-16'),
+    (11, '84355907A', 'gutierrez', '1984-08-11', FALSE, NULL),
+    (12, '51454171C', 'marcos', '1993-08-11', FALSE, NULL),
+    (13, '03207026K', 'urbón', '1961-08-11', FALSE, NULL),
+    (14, '89051216T', 'cabeza', '1955-08-11', TRUE, NULL),
+    (15, '97400094Q', 'ceinos', '1967-08-11', FALSE, NULL);

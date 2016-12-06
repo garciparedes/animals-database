@@ -6,21 +6,20 @@ CREATE TABLE incidencia (
     id_animal         INTEGER     NOT NULL,
     inicio_propiedad  TIMESTAMP   NOT NULL,
 
-    /*
-    Clave foranea hacia de tenedor
-     */
-    id_tenedor        INTEGER,
-
 
     /*
     Atributos propios de incidencia
      */
-    nombre VARCHAR(50),
     fecha             TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     tipo              VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50),
     sancion           DECIMAL,
     medida_cautelar   VARCHAR(512),
 
+    /*
+    Clave foranea hacia de tenedor
+     */
+    id_tenedor        INTEGER,
 
     CONSTRAINT incidencia__clave
     PRIMARY KEY (id_animal, fecha),
