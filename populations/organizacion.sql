@@ -7,7 +7,7 @@ INSERT INTO responsable (id_responsable, nombre, domicilio) VALUES
     (34, 'explotacion de vacuno ramirez', 'la paz 7 3ºc');
 
 
-INSERT INTO organizacion (id_responsable, nif, tipo) VALUES
+INSERT INTO organizacion (id_responsable, cif, tipo) VALUES
     (3, '423452352', 'explotacion'),
     (30, '423452351', 'zoo'),
     (31, '423452353', 'circo'),

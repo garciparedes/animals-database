@@ -46,8 +46,6 @@ CREATE TABLE incidencia (
 
     CONSTRAINT incidencia__tipos
     CHECK (
-        tipo = 'denuncia' OR
-        tipo='robo' OR
-        tipo = 'perdida'
+        tipo IN ('denuncia', 'robo', 'perdida')
     )
 );

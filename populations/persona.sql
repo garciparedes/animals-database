@@ -14,7 +14,7 @@ INSERT INTO responsable (id_responsable, nombre, domicilio) VALUES
     (14,'eutiquio', 'la paz 7 3ºc'),
     (15,'carlos', 'la paz 7 3ºc');
 
-INSERT INTO persona (id_responsable, dni, apellidos, nacimiento, delitos, seguro_rc) VALUES
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUES
     (1, '07253620H', 'garcia prado', '1994-08-11', FALSE, '2020-10-02'),
     (2, '72911354C', 'sánchez', '1990-08-11', FALSE, '2020-10-04'),
     (4, '28504321F', 'lopez', '1992-08-11', FALSE , '2008-10-12'),

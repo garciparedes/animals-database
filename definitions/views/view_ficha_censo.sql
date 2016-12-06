@@ -9,7 +9,7 @@ AS
         a.domicilio   AS domicilio_animal,
         per.nombre,
         per.apellidos,
-        per.dni,
+        per.nif,
         per.domicilio AS domicilio_dueño,
         a.id_censal,
         a.id_chip

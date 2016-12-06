@@ -2,11 +2,11 @@ CREATE TABLE organizacion (
 
     id_responsable INTEGER     NOT NULL,
 
-    nif            VARCHAR(20) NOT NULL,
+    cif            VARCHAR(20) NOT NULL,
     tipo           VARCHAR(50) NOT NULL,
 
     CONSTRAINT organizacion__clave
-    PRIMARY KEY (id_responsable, nif),
+    PRIMARY KEY (id_responsable, cif),
 
 
     CONSTRAINT organizacion__responsable
@@ -16,9 +16,9 @@ CREATE TABLE organizacion (
 
     CONSTRAINT organizacion__tipo
     CHECK (
-        tipo = 'explotacion' OR
-        tipo = 'zoo' OR
-        tipo = 'circo' OR
-        tipo = 'clinica'
-    )
+        tipo IN ('explotacion', 'zoo', 'circo', 'clinica')
+    ),
+
+    CONSTRAINT persona__nif_es
+    CHECK (cif LIKE '%(1)[0-9](8)%(1)')
 );
