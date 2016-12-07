@@ -1,15 +1,15 @@
 ## Consultas
 
-- Todas los propietarios que han tenido un animal
-- Obtener la ficha de registro de los animales censados
-- Todas las vacunas que ha puesto una persona a sus animales
+- Todos los propietarios que han tenido un animal incluyendo el rango de fechas.
+- Ficha de registro de los animales censados
+- Nº de vacunas que ha puesto cada persona a sus animales
 - Las 5 infracciones más comunes
-- Devolver el número de propietarios de cada animal
+- El número de propietarios de cada animal
 - El animal más vacunado
-- La duración media, mediana, desviaciacion típica y moda de una propiedad
 - Los animales vacunados en un periodo
-- Los responsables que han vacunado 7 perros el mismo año que se han sacado una licencia
-- El ratio de personas que han cometido alguna infracción pero poseen alguna licencia
-- Las 3 razas de perro que más se pierde
-- Número de perros que se llaman Pepe
+- Los responsables que han vacunado 7 perros el mismo año que han obtenido una licencia
+- El ratio de personas que han cometido alguna infracción y poseen alguna licencia
+- Las 3 razas de perro que más se pierde.
+- Nombres de perro más comunes.
 - Animales que han cambiado de propietario pero luego han tenido otra vez el mismo
+- La duración media, mediana, desviaciacion típica y moda de una propiedad
