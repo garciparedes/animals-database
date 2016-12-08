@@ -2,20 +2,20 @@ SELECT *
 FROM (
          SELECT
              i.nombre,
-             COUNT(*) AS nInc
+             COUNT(*) AS nro_infracciones
          FROM
-             Incidencia i
-         WHERE i.tipo = 'infraccion'
+             view_infraccion i
          GROUP BY i.nombre
      ) AS NI
-WHERE 5 > (SELECT COUNT(*)
-           FROM (
-                    SELECT
-                        i.nombre,
-                        COUNT(*) AS nInc
-                    FROM
-                        Incidencia i
-                    WHERE i.tipo = 'infraccion'
-                    GROUP BY i.nombre)
-               AS NI2
-           WHERE NI2.nInc > NI.nInc);
+WHERE 5 > (
+    SELECT COUNT(*)
+    FROM (
+             SELECT
+                 i.nombre,
+                 COUNT(*) AS nro_infracciones
+             FROM
+                 view_infraccion i
+             GROUP BY i.nombre)
+        AS NI2
+    WHERE NI2.nro_infracciones > NI.nro_infracciones
+);
