@@ -8,4 +8,4 @@ FROM
     ) AS a
 WHERE
     a.aplicacion >= '2016-01-01' AND
-    a.aplicacion <= '2016-12-21'
+    a.aplicacion <= '2016-12-21';

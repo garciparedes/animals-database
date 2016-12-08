@@ -1,0 +1,27 @@
+DROP VIEW view_robo RESTRICT;
+DROP VIEW view_persona RESTRICT;
+DROP VIEW view_perdida RESTRICT;
+DROP VIEW view_organizacion RESTRICT;
+DROP VIEW view_infraccion RESTRICT;
+DROP VIEW view_ficha_censo RESTRICT;
+DROP VIEW view_animal_potencialmente_peligroso RESTRICT;
+DROP VIEW view_animal_censado RESTRICT;
+
+ALTER TABLE vacuna DROP FOREIGN KEY vacuna_instancia__animal;
+ALTER TABLE persona DROP FOREIGN KEY persona__responsable;
+ALTER TABLE organizacion DROP FOREIGN KEY organizacion__responsable;
+ALTER TABLE licencia DROP FOREIGN KEY licencia_instancia__responsable;
+ALTER TABLE incidencia DROP FOREIGN KEY incidencia__propiedad;
+ALTER TABLE incidencia DROP FOREIGN KEY incidencia__tenedor;
+ALTER TABLE animal_censado DROP FOREIGN KEY animal_censado_extends_animal;
+ALTER TABLE propiedad DROP FOREIGN KEY propiedad__animal;
+ALTER TABLE propiedad DROP FOREIGN KEY propiedad__responsable;
+DROP TABLE vacuna;
+DROP TABLE persona;
+DROP TABLE organizacion;
+DROP TABLE licencia;
+DROP TABLE incidencia;
+DROP TABLE animal_censado;
+DROP TABLE propiedad;
+DROP TABLE responsable;
+DROP TABLE animal;

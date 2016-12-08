@@ -16,4 +16,4 @@ WHERE
         p.id_animal = i.id_animal AND
         p.inicio_propiedad = i.inicio_propiedad
     )
-ORDER BY i.fecha DESC
+ORDER BY i.fecha DESC;

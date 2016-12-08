@@ -22,9 +22,9 @@ CREATE TABLE licencia (
 
     CONSTRAINT licencia_instancia__responsable
     FOREIGN KEY (id_responsable)
-    REFERENCES responsable (id_responsable),
+    REFERENCES responsable (id_responsable)
 
-
+    /*
     CONSTRAINT licencia_perros_peligrosos
     CHECK (
         CASE WHEN nombre = 'perros_peligrosos'
@@ -39,4 +39,5 @@ CREATE TABLE licencia (
                 )
         END
     )
+    */
 );

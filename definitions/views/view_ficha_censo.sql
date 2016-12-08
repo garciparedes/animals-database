@@ -9,7 +9,7 @@ AS
         a.domicilio   AS domicilio_animal,
         per.nombre,
         per.apellidos,
-        per.dni,
+        per.nif,
         per.domicilio AS domicilio_responsable,
         lic.num_licencia,
         a.id_censal,
@@ -32,4 +32,4 @@ AS
         ) as lic on per.id_responsable = lic.id_responsable
     WHERE
         per.id_responsable = p.id_responsable AND
-        p.id_animal = a.id_animal
+        p.id_animal = a.id_animal;
