@@ -176,6 +176,3 @@ echo
 cat ${queries}'query-12.sql'
 echo
 echo
-cat ${queries}'query-13.sql'
-echo
-echo
