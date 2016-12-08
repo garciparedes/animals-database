@@ -43,7 +43,9 @@ CREATE TABLE propiedad (
             THEN
                 inicio_propiedad <= fin
         END
-    ),
+    )
+     /*
+     ,
 
 
     CONSTRAINT propiedad__overlapping
@@ -67,4 +69,5 @@ CREATE TABLE propiedad (
         )
 
     )
+    */
 );
