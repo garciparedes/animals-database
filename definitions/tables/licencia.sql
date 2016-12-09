@@ -22,22 +22,22 @@ CREATE TABLE licencia (
 
     CONSTRAINT licencia_instancia__responsable
     FOREIGN KEY (id_responsable)
-    REFERENCES responsable (id_responsable)
+    REFERENCES responsable (id_responsable),
 
-    /*
+
     CONSTRAINT licencia_perros_peligrosos
     CHECK (
         CASE WHEN nombre = 'perros_peligrosos'
             THEN
                 CURRENT_TIMESTAMP - YEAR(18) <= (
-                    SELECT v.nacimiento
-                    FROM view_persona v
+                    SELECT p.nacimiento
+                    FROM persona p
                     WHERE
-                        v.id_responsable = id_responsable AND
-                        v.delitos = TRUE AND
-                        v.seguro_rc >= CURRENT_TIMESTAMP
+                        p.id_responsable = id_responsable AND
+                        p.delitos = TRUE AND
+                        p.seguro_rc >= CURRENT_TIMESTAMP
                 )
         END
     )
-    */
+
 );

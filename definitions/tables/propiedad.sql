@@ -44,30 +44,4 @@ CREATE TABLE propiedad (
                 inicio_propiedad <= fin
         END
     )
-     /*
-     ,
-
-
-    CONSTRAINT propiedad__overlapping
-    CHECK (
-        NOT exists(
-            SELECT *
-            FROM propiedad p
-            WHERE
-                p.id_animal = id_animal AND
-                (
-                    (
-                        p.inicio_propiedad >= inicio_propiedad AND
-                        p.fin <= inicio_propiedad
-                    ) OR
-                    (
-                        p.inicio_propiedad >= fin AND
-                        p.fin <= fin
-                    )
-                )
-
-        )
-
-    )
-    */
 );

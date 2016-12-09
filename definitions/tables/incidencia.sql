@@ -11,7 +11,6 @@ CREATE TABLE incidencia (
     Atributos propios de incidencia
      */
     fecha            TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    tipo             VARCHAR(50) NOT NULL,
     nombre           VARCHAR(50),
     sancion          DECIMAL,
     medida_cautelar  VARCHAR(512),
@@ -41,11 +40,5 @@ CREATE TABLE incidencia (
     CHECK (inicio_propiedad >= fecha),
 
     CONSTRAINT incidencia__sancion
-    CHECK (sancion >= 0),
-
-
-    CONSTRAINT incidencia__tipos
-    CHECK (
-        tipo IN ('denuncia', 'robo', 'perdida')
-    )
+    CHECK (sancion >= 0)
 );

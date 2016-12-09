@@ -240,24 +240,24 @@ CREATE TABLE licencia (
 
     CONSTRAINT licencia_instancia__responsable
     FOREIGN KEY (id_responsable)
-    REFERENCES responsable (id_responsable)
+    REFERENCES responsable (id_responsable),
 
-    /*
+
     CONSTRAINT licencia_perros_peligrosos
     CHECK (
         CASE WHEN nombre = 'perros_peligrosos'
             THEN
                 CURRENT_TIMESTAMP - YEAR(18) <= (
-                    SELECT v.nacimiento
-                    FROM view_persona v
+                    SELECT p.nacimiento
+                    FROM persona p
                     WHERE
-                        v.id_responsable = id_responsable AND
-                        v.delitos = TRUE AND
-                        v.seguro_rc >= CURRENT_TIMESTAMP
+                        p.id_responsable = id_responsable AND
+                        p.delitos = TRUE AND
+                        p.seguro_rc >= CURRENT_TIMESTAMP
                 )
         END
     )
-    */
+
 );
 
 
@@ -307,32 +307,6 @@ CREATE TABLE propiedad (
                 inicio_propiedad <= fin
         END
     )
-     /*
-     ,
-
-
-    CONSTRAINT propiedad__overlapping
-    CHECK (
-        NOT exists(
-            SELECT *
-            FROM propiedad p
-            WHERE
-                p.id_animal = id_animal AND
-                (
-                    (
-                        p.inicio_propiedad >= inicio_propiedad AND
-                        p.fin <= inicio_propiedad
-                    ) OR
-                    (
-                        p.inicio_propiedad >= fin AND
-                        p.fin <= fin
-                    )
-                )
-
-        )
-
-    )
-    */
 );
 
 CREATE TABLE incidencia (
@@ -348,7 +322,6 @@ CREATE TABLE incidencia (
     Atributos propios de incidencia
      */
     fecha            TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    tipo             VARCHAR(50) NOT NULL,
     nombre           VARCHAR(50),
     sancion          DECIMAL,
     medida_cautelar  VARCHAR(512),
@@ -378,13 +351,7 @@ CREATE TABLE incidencia (
     CHECK (inicio_propiedad >= fecha),
 
     CONSTRAINT incidencia__sancion
-    CHECK (sancion >= 0),
-
-
-    CONSTRAINT incidencia__tipos
-    CHECK (
-        tipo IN ('denuncia', 'robo', 'perdida')
-    )
+    CHECK (sancion >= 0)
 );
 
 
@@ -432,9 +399,21 @@ AS
         i.nombre,
         i.fecha,
         i.sancion,
-        i.medida_cautelar
+        i.medida_cautelar,
+        (
+            CASE
+                WHEN sancion >= 30 AND sancion <= 100
+                    THEN 'leve'
+                WHEN sancion > 100 AND sancion <= 300
+                    THEN 'grave'
+                WHEN sancion > 300 AND sancion <= 1200
+                    THEN 'muy grave'
+                ELSE ''
+            END
+        ) AS 'tipo_sancion'
+
     FROM incidencia i
-    WHERE i.tipo = 'infraccion';
+    WHERE i.sancion > 0;
 
 CREATE OR REPLACE VIEW view_perdida
 AS
@@ -442,10 +421,9 @@ AS
         i.id_animal,
         i.inicio_propiedad,
         i.id_tenedor,
-        i.nombre,
         i.fecha
     FROM incidencia i
-    WHERE i.tipo = 'perdida';
+    WHERE i.nombre = 'perdida';
 
 CREATE OR REPLACE VIEW view_robo
 AS
@@ -453,10 +431,9 @@ AS
         i.id_animal,
         i.inicio_propiedad,
         i.id_tenedor,
-        i.nombre,
         i.fecha
     FROM incidencia i
-    WHERE i.tipo = 'robo';
+    WHERE i.nombre = 'robo';
 
 CREATE OR REPLACE VIEW view_animal_potencialmente_peligroso
 AS
@@ -615,29 +592,29 @@ INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUES
     (4, 2, '2010-12-21', NULL);
 
 
-INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, tipo, sancion, medida_cautelar, id_tenedor) VALUES
-    (1, '2010-12-21', '2016-12-05', 'mordedura', 'infraccion', 123, NULL, NULL),
-    (1, '2010-12-21', '2016-12-05 11:22', NULL, 'robo', NULL, NULL, NULL),
-    (1, '2010-12-21', '2016-12-06', NULL, 'robo', NULL, NULL, NULL),
-    (2, '2010-12-21', '2016-12-07', NULL, 'perdida', NULL, NULL, NULL),
-    (2, '2010-12-21', '2016-12-08', 'sin bozal', 'infraccion', 123, NULL, NULL),
-    (1, '2010-12-21', '2016-12-09', 'caca calle', 'infraccion', 123, NULL, NULL),
-    (1, '2010-12-21', '2016-12-15', NULL, 'robo', NULL, NULL, 2),
-    (2, '2010-12-21', '2015-01-17', 'caca calle', 'infraccion', 123, NULL, NULL),
-    (2, '2010-12-21', '2015-02-18', 'caca calle', 'infraccion', 79, NULL, NULL),
-    (2, '2010-12-21', '2015-03-19', 'caca calle', 'infraccion', 123, NULL, NULL),
-    (2, '2010-12-21', '2015-04-20', 'caca calle', 'infraccion', 43, NULL, NULL),
-    (2, '2010-12-21', '2015-05-21', 'caca calle', 'infraccion', 200, NULL, NULL),
-    (1, '2010-12-21', '2015-06-22', 'caca calle', 'infraccion', 233, NULL, NULL),
-    (3, '2010-12-21', '2015-07-23', 'caca calle', 'infraccion', 30, NULL, NULL),
-    (3, '2010-12-21', '2015-08-24', 'caca calle', 'infraccion', 1000, NULL, NULL),
-    (3, '2010-12-21', '2015-09-25', 'caca calle', 'infraccion', 756, NULL, NULL),
-    (1, '2010-12-21', '2015-10-26', 'caca calle', 'infraccion', 322, NULL, NULL),
-    (3, '2010-12-21', '2015-11-27', 'caca calle', 'infraccion', 129, NULL, NULL),
-    (1, '2010-12-21', '2015-12-28', 'caca calle', 'infraccion', 50, NULL, NULL),
-    (1, '2010-12-21', '2015-12-29', 'caca calle', 'infraccion', 43, NULL, NULL),
-    (1, '2010-12-21', '2015-12-30', 'caca calle', 'infraccion', 64, NULL, NULL),
-    (1, '2010-12-21', '2015-12-31', 'caca calle', 'infraccion', 139, NULL, NULL);
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUES
+    (1, '2010-12-21', '2016-12-05', 'mordedura', 123, NULL, NULL),
+    (1, '2010-12-21', '2016-12-05 11:22', 'robo', NULL, NULL, NULL),
+    (1, '2010-12-21', '2016-12-06', 'robo', NULL, NULL, NULL),
+    (2, '2010-12-21', '2016-12-07', 'perdida', NULL, NULL, NULL),
+    (2, '2010-12-21', '2016-12-08', 'sin bozal', 123, NULL, NULL),
+    (1, '2010-12-21', '2016-12-09', 'caca calle', 123, NULL, NULL),
+    (1, '2010-12-21', '2016-12-15', 'robo', NULL, NULL, 2),
+    (2, '2010-12-21', '2015-01-17', 'caca calle',  123, NULL, NULL),
+    (2, '2010-12-21', '2015-02-18', 'caca calle', 79, NULL, NULL),
+    (2, '2010-12-21', '2015-03-19', 'caca calle', 123, NULL, NULL),
+    (2, '2010-12-21', '2015-04-20', 'caca calle', 43, NULL, NULL),
+    (2, '2010-12-21', '2015-05-21', 'caca calle', 200, NULL, NULL),
+    (1, '2010-12-21', '2015-06-22', 'caca calle', 233, NULL, NULL),
+    (3, '2010-12-21', '2015-07-23', 'caca calle', 30, NULL, NULL),
+    (3, '2010-12-21', '2015-08-24', 'caca calle', 1000, NULL, NULL),
+    (3, '2010-12-21', '2015-09-25', 'caca calle', 756, NULL, NULL),
+    (1, '2010-12-21', '2015-10-26', 'caca calle', 322, NULL, NULL),
+    (3, '2010-12-21', '2015-11-27', 'caca calle', 129, NULL, NULL),
+    (1, '2010-12-21', '2015-12-28', 'caca calle', 50, NULL, NULL),
+    (1, '2010-12-21', '2015-12-29', 'caca calle', 43, NULL, NULL),
+    (1, '2010-12-21', '2015-12-30', 'caca calle', 64, NULL, NULL),
+    (1, '2010-12-21', '2015-12-31', 'caca calle', 139, NULL, NULL);
 
 
 /*
@@ -664,13 +641,11 @@ SELECT
     a.especie,
     COUNT(*) AS nro_vacunas
 FROM
-    (
-        SELECT *
-        FROM animal
-            NATURAL JOIN vacuna
-    ) AS a
+    animal a
+    NATURAL JOIN vacuna
 GROUP BY
     a.especie
+HAVING COUNT(*) > 1
 ORDER BY nro_vacunas DESC;
 
 SELECT *
@@ -751,7 +726,8 @@ WHERE
     vp.nombre = 'javier';
 
 SELECT DISTINCT
-    a.id_animal
+    a.id_animal,
+    a.aplicacion
 FROM
     (
         SELECT *
