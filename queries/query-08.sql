@@ -1,3 +1,7 @@
+/*
+Consulta 8: Listado de vacunas suministradas en un periodo concreto de tiempo
+ */
+
 SELECT DISTINCT
     a.id_animal,
     a.aplicacion

@@ -1,3 +1,7 @@
+/*
+Insercion de incidencias
+ */
+
 INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
     (1, '2010-12-21', '2016-12-05', 'mordedura', 123, NULL, NULL);
 

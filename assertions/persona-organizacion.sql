@@ -1,3 +1,6 @@
+/*
+Asercion que permite el apropiado uso de la herencia tal y como se indica en el diagrama ERD
+ */
 CREATE ASSERTION persona_organizacion_unique
 CHECK(
     (

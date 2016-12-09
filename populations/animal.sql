@@ -1,3 +1,7 @@
+/*
+Insercion de animales
+ */
+
 INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
     (7, 'vaca', 'Cattle', FALSE, FALSE, FALSE, FALSE);
 

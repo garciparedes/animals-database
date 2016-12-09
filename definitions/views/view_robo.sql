@@ -1,3 +1,6 @@
+/*
+Vista de robo
+ */
 CREATE OR REPLACE VIEW view_robo
 AS
     SELECT

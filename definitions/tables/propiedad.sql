@@ -1,3 +1,6 @@
+/*
+Tabla Propiedad
+ */
 CREATE TABLE propiedad (
 
     /*

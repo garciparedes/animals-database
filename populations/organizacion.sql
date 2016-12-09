@@ -1,3 +1,8 @@
+/*
+Insercion de organizaciones
+ */
+
+
 INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
     (3, 'fasa', 'la paz 7 3ºc');
 

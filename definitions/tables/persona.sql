@@ -1,3 +1,6 @@
+/*
+Tabla Persona
+ */
 CREATE TABLE persona (
     id_responsable INTEGER      NOT NULL,
 

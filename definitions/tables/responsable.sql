@@ -1,3 +1,6 @@
+/*
+Tabla Responsable
+ */
 CREATE TABLE responsable (
 
 

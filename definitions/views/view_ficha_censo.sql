@@ -1,3 +1,6 @@
+/*
+Vista de fichas del censo
+ */
 CREATE OR REPLACE VIEW view_ficha_censo
 AS
     SELECT

@@ -1,3 +1,6 @@
+/*
+Tabla Vacuna
+ */
 CREATE TABLE vacuna (
 
 

@@ -1,3 +1,6 @@
+/*
+Tabla Animal Censado
+ */
 CREATE TABLE animal_censado (
 
     /*

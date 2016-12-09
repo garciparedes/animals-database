@@ -1,3 +1,7 @@
+/*
+Consulta 6: Numero medio de vacunas que se han suministrado a cada animal agrupados por especie
+ */
+
 SELECT
     a.especie,
     ava.nro_vacunas / a.nro_ejemplares AS nro_medio_vacunas

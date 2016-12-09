@@ -1,3 +1,6 @@
+/*
+Vista de organizacion
+ */
 CREATE OR REPLACE VIEW view_organizacion
 AS
     SELECT

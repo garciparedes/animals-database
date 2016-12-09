@@ -1,3 +1,6 @@
+/*
+Consulta 5: El numero de responsables que ha tenido cada animal
+ */
 SELECT
     p.id_animal,
     COUNT(*)

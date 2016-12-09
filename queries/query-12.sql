@@ -1,3 +1,7 @@
+/*
+Consulta 12: Animales que han cambiado de responsable pero luego han tenido otra vez el mismo
+ */
+
 SELECT DISTINCT
     p1.id_animal,
     p1.id_responsable

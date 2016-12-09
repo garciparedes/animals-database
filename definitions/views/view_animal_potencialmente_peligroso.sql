@@ -1,8 +1,11 @@
+/*
+Vista de animal potencialmente peligroso
+ */
 CREATE OR REPLACE VIEW view_animal_potencialmente_peligroso
 AS
     SELECT *
     FROM
-        animal a NATURAL JOIN animal_censado
+        view_animal_censado a
     WHERE a.peligroso = TRUE;
 
 

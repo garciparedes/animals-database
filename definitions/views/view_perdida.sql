@@ -1,3 +1,6 @@
+/*
+Vista de perdidas
+ */
 CREATE OR REPLACE VIEW view_perdida
 AS
     SELECT

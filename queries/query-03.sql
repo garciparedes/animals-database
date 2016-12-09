@@ -1,3 +1,6 @@
+/*
+Consulta 3: Ranking de especies de animales censados mas veces vacunados
+ */
 SELECT
     a.especie,
     COUNT(*) AS nro_vacunas

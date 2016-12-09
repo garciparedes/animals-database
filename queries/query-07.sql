@@ -1,3 +1,7 @@
+/*
+Consulta 7: Todas las vacunas que ha puesto una persona (javier) a sus animales
+ */
+
 SELECT a.id_animal,
     v.nombre_vacuna,
     v.aplicacion

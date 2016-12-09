@@ -1,3 +1,8 @@
+/*
+Insercion de propiedades
+ */
+
+
 INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
     (1, 2, '2010-12-21', NULL);
 

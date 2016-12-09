@@ -1,3 +1,6 @@
+/*
+Tabla Organizacion
+ */
 CREATE TABLE organizacion (
 
     id_responsable INTEGER     NOT NULL,

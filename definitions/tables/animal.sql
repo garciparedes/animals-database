@@ -1,3 +1,6 @@
+/*
+Tabla Animal
+ */
 CREATE TABLE animal (
 
     /*

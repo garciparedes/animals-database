@@ -1,3 +1,6 @@
+/*
+Tabla Incidencia
+ */
 CREATE TABLE incidencia (
 
     /*

@@ -1,3 +1,6 @@
+/*
+Vista de infraccion
+ */
 CREATE OR REPLACE VIEW view_infraccion
 AS
     SELECT

@@ -1,3 +1,7 @@
+/*
+Consulta 10: Ranking de los tipos de animal censado que mas se pierden agrupados por capa
+ */
+
 SELECT
     ac.capa,
     COUNT(*) as nro_perdidas

@@ -1,3 +1,7 @@
+/*
+Consulta 1: Todos los propietarios que han tenido al menos una propiedad incluyendo la cuenta de las mismas
+ */
+
 SELECT
     Res.id_responsable as id,
     Res.nombre,

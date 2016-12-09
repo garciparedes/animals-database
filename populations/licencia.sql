@@ -1,3 +1,8 @@
+/*
+Insercion de licencias
+ */
+
+
 INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUE
     (1, 'perros_peligrosos', 1, '2007-10-01', '2027-10-01');
 

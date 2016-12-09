@@ -1,3 +1,7 @@
+/*
+Consulta 9: El listado de infracciones en las que ha participado cada persona
+ */
+
 SELECT
     vp.nombre,
     vp.apellidos,

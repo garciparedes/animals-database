@@ -1,3 +1,8 @@
+/*
+Insercion de vacunas
+ */
+
+
 INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
     (1, 'rabia');
 

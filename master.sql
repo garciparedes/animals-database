@@ -1,5 +1,15 @@
 
 /*
+PRACTICA ANALISIS Y DISENO DE BASE DE DATOS: ANIMALES
+
+AUTORES:
+SERGIO GARCIA PRADO (garciparedes.me)
+FERNANDO URBON DOMINGUEZ
+SERGIO MUNOZ GOZALO
+*/
+
+
+/*
 DROP DE ANTIGUAS TABLAS
 */
 
@@ -37,6 +47,9 @@ DROP TABLE animal;
 DEFINICION DE TABLAS
 */
 
+/*
+Tabla Animal
+ */
 CREATE TABLE animal (
 
     /*
@@ -58,6 +71,9 @@ CREATE TABLE animal (
 );
 
 
+/*
+Tabla Animal Censado
+ */
 CREATE TABLE animal_censado (
 
     /*
@@ -107,6 +123,9 @@ CREATE TABLE animal_censado (
     )
 );
 
+/*
+Tabla Vacuna
+ */
 CREATE TABLE vacuna (
 
 
@@ -143,6 +162,9 @@ CREATE TABLE vacuna (
     )
 );
 
+/*
+Tabla Responsable
+ */
 CREATE TABLE responsable (
 
 
@@ -158,6 +180,9 @@ CREATE TABLE responsable (
     PRIMARY KEY (id_responsable)
 );
 
+/*
+Tabla Persona
+ */
 CREATE TABLE persona (
     id_responsable INTEGER      NOT NULL,
 
@@ -190,6 +215,9 @@ CREATE TABLE persona (
 );
 
 
+/*
+Tabla Organizacion
+ */
 CREATE TABLE organizacion (
 
     id_responsable INTEGER     NOT NULL,
@@ -216,6 +244,9 @@ CREATE TABLE organizacion (
 );
 
 
+/*
+Tabla Licencia
+ */
 CREATE TABLE licencia (
 
 
@@ -261,6 +292,9 @@ CREATE TABLE licencia (
 );
 
 
+/*
+Tabla Propiedad
+ */
 CREATE TABLE propiedad (
 
     /*
@@ -309,6 +343,9 @@ CREATE TABLE propiedad (
     )
 );
 
+/*
+Tabla Incidencia
+ */
 CREATE TABLE incidencia (
 
     /*
@@ -359,6 +396,9 @@ CREATE TABLE incidencia (
 DEFINICION DE VISTAS
 */
 
+/*
+Vista de animal censado
+ */
 CREATE OR REPLACE VIEW view_animal_censado
 AS
     SELECT *
@@ -369,6 +409,9 @@ AS
 
 
 
+/*
+Vista de organizacion
+ */
 CREATE OR REPLACE VIEW view_organizacion
 AS
     SELECT
@@ -380,6 +423,9 @@ AS
 
 
 
+/*
+Vista de persona
+ */
 CREATE OR REPLACE VIEW view_persona
 AS
     SELECT *
@@ -390,6 +436,9 @@ AS
 
 
 
+/*
+Vista de infraccion
+ */
 CREATE OR REPLACE VIEW view_infraccion
 AS
     SELECT
@@ -415,6 +464,9 @@ AS
     FROM incidencia i
     WHERE i.sancion > 0;
 
+/*
+Vista de perdidas
+ */
 CREATE OR REPLACE VIEW view_perdida
 AS
     SELECT
@@ -425,6 +477,9 @@ AS
     FROM incidencia i
     WHERE i.nombre = 'perdida';
 
+/*
+Vista de robo
+ */
 CREATE OR REPLACE VIEW view_robo
 AS
     SELECT
@@ -435,16 +490,22 @@ AS
     FROM incidencia i
     WHERE i.nombre = 'robo';
 
+/*
+Vista de animal potencialmente peligroso
+ */
 CREATE OR REPLACE VIEW view_animal_potencialmente_peligroso
 AS
     SELECT *
     FROM
-        animal a NATURAL JOIN animal_censado
+        view_animal_censado a
     WHERE a.peligroso = TRUE;
 
 
 
 
+/*
+Vista de fichas del censo
+ */
 CREATE OR REPLACE VIEW view_ficha_censo
 AS
     SELECT
@@ -487,6 +548,10 @@ AS
 POBLACION DE TABLAS
 */
 
+/*
+Insercion de animales
+ */
+
 INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
     (7, 'vaca', 'Cattle', FALSE, FALSE, FALSE, FALSE);
 
@@ -495,6 +560,11 @@ INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, 
 
 INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
     (9, 'cabra', 'boer', FALSE, TRUE, FALSE, FALSE);
+
+
+/*
+Insercion de animales censados
+ */
 
 
 INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
@@ -518,6 +588,8 @@ INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, 
 INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
     (10, 'perro', 'mastin', TRUE, TRUE, FALSE, FALSE);
 
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (11, 'perro', 'pastor aleman', TRUE, TRUE, FALSE, FALSE);
 
 INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
     VALUE
@@ -547,6 +619,14 @@ INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip
     VALUE
     (10, 'misifu', 'tranquilo', 'blanco', 'la rua', '12348', '7', FALSE, '2005-11-10');
 
+INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
+    VALUE
+    (11, 'misifu', 'salvaje', 'blanco', 'la rua', '12349', '8', FALSE, '2004-11-10');
+
+/*
+Insercion de vacunas
+ */
+
 
 INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
     (1, 'rabia');
@@ -568,6 +648,11 @@ INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
 
 INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
     (10, 'rabia');
+
+/*
+Insercion de personas
+ */
+
 
 INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
     (1 ,'sergio', 'la paz 7 3ºc');
@@ -653,6 +738,11 @@ INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro
 INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
     (15, '97400094Q', 'ceinos', '1967-08-11', FALSE, NULL);
 
+/*
+Insercion de organizaciones
+ */
+
+
 INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
     (3, 'fasa', 'la paz 7 3ºc');
 
@@ -691,6 +781,11 @@ INSERT INTO organizacion (id_responsable, cif, tipo) VALUE
     (34, '423452356', 'explotacion');
 
 
+/*
+Insercion de licencias
+ */
+
+
 INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUE
     (1, 'perros_peligrosos', 1, '2007-10-01', '2027-10-01');
 
@@ -705,6 +800,11 @@ INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUE
 
 INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUE
     (5, 'perros_peligrosos', 5, '2007-10-01', '2027-10-01');
+
+/*
+Insercion de propiedades
+ */
+
 
 INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
     (1, 2, '2010-12-21', NULL);
@@ -724,6 +824,10 @@ INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
 INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
     (4, 2, '2010-12-21', NULL);
 
+
+/*
+Insercion de incidencias
+ */
 
 INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
     (1, '2010-12-21', '2016-12-05', 'mordedura', 123, NULL, NULL);
@@ -796,6 +900,10 @@ INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, med
 CONSULTAS
 */
 
+/*
+Consulta 1: Todos los propietarios que han tenido al menos una propiedad incluyendo la cuenta de las mismas
+ */
+
 SELECT
     Res.id_responsable as id,
     Res.nombre,
@@ -808,10 +916,16 @@ WHERE
 GROUP BY res.id_responsable
 ORDER BY COUNT(*) DESC;
 
+/*
+Consulta 2: Ficha de registro de los animales censados que han nacido en 2005
+ */
 SELECT *
 FROM view_ficha_censo censo
 WHERE censo.nacimiento = 2005;
 
+/*
+Consulta 3: Ranking de especies de animales censados mas veces vacunados
+ */
 SELECT
     a.especie,
     COUNT(*) AS nro_vacunas
@@ -823,6 +937,9 @@ GROUP BY
 HAVING COUNT(*) > 1
 ORDER BY nro_vacunas DESC;
 
+/*
+Consulta 4: 5 infracciones mas comunes
+ */
 SELECT *
 FROM (
          SELECT
@@ -845,6 +962,9 @@ WHERE 5 > (
     WHERE NI2.nro_infracciones > NI.nro_infracciones
 );
 
+/*
+Consulta 5: El numero de responsables que ha tenido cada animal
+ */
 SELECT
     p.id_animal,
     COUNT(*)
@@ -859,6 +979,10 @@ FROM
     ) AS p
 GROUP BY
     p.id_animal;
+
+/*
+Consulta 6: Numero medio de vacunas que se han suministrado a cada animal agrupados por especie
+ */
 
 SELECT
     a.especie,
@@ -887,6 +1011,10 @@ FROM (
     ) AS ava
 WHERE a.especie = ava.especie;
 
+/*
+Consulta 7: Todas las vacunas que ha puesto una persona (javier) a sus animales
+ */
+
 SELECT a.id_animal,
     v.nombre_vacuna,
     v.aplicacion
@@ -899,6 +1027,10 @@ WHERE
     Pr.id_animal = a.id_animal AND
     a.id_animal = v.id_animal AND
     vp.nombre = 'javier';
+
+/*
+Consulta 8: Listado de vacunas suministradas en un periodo concreto de tiempo
+ */
 
 SELECT DISTINCT
     a.id_animal,
@@ -913,13 +1045,18 @@ WHERE
     a.aplicacion >= '2016-01-01' AND
     a.aplicacion <= '2016-12-21';
 
+/*
+Consulta 9: El listado de infracciones en las que ha participado cada persona
+ */
+
 SELECT
     vp.nombre,
     vp.apellidos,
     i.fecha,
     i.nombre,
     i.sancion,
-    i.medida_cautelar
+    i.medida_cautelar,
+    i.tipo_sancion
 FROM
     view_persona vp,
     propiedad p,
@@ -933,6 +1070,10 @@ WHERE
     )
 ORDER BY i.fecha DESC;
 
+/*
+Consulta 10: Ranking de los tipos de animal censado que mas se pierden agrupados por capa
+ */
+
 SELECT
     ac.capa,
     COUNT(*) as nro_perdidas
@@ -942,6 +1083,10 @@ FROM
 WHERE i.id_animal = ac.id_animal
 GROUP BY ac.capa;
 
+/*
+Consulta 11: Nombres de perro mas comunes ordenados
+ */
+
 SELECT
     ac.nombre,
     COUNT(*) AS cuenta
@@ -950,6 +1095,10 @@ FROM
 WHERE ac.especie = 'perro'
 GROUP BY ac.nombre
 ORDER BY COUNT(*) DESC;
+
+/*
+Consulta 12: Animales que han cambiado de responsable pero luego han tenido otra vez el mismo
+ */
 
 SELECT DISTINCT
     p1.id_animal,

@@ -1,3 +1,8 @@
+/*
+Insercion de personas
+ */
+
+
 INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
     (1 ,'sergio', 'la paz 7 3ºc');
 

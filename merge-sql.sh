@@ -15,6 +15,17 @@ queries='queries/'
 
 echo
 echo '/*'
+echo 'PRACTICA ANALISIS Y DISENO DE BASE DE DATOS: ANIMALES'
+echo
+echo 'AUTORES:'
+echo 'SERGIO GARCIA PRADO (garciparedes.me)'
+echo 'FERNANDO URBON DOMINGUEZ'
+echo 'SERGIO MUNOZ GOZALO'
+echo '*/'
+echo
+
+echo
+echo '/*'
 echo 'DROP DE ANTIGUAS TABLAS'
 echo '*/'
 echo

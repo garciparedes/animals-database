@@ -1,3 +1,8 @@
+/*
+Insercion de animales censados
+ */
+
+
 INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
     (1, 'perro', 'alano', TRUE, TRUE, FALSE, TRUE);
 
@@ -19,6 +24,8 @@ INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, 
 INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
     (10, 'perro', 'mastin', TRUE, TRUE, FALSE, FALSE);
 
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (11, 'perro', 'pastor aleman', TRUE, TRUE, FALSE, FALSE);
 
 INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
     VALUE
@@ -47,3 +54,7 @@ INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip
 INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
     VALUE
     (10, 'misifu', 'tranquilo', 'blanco', 'la rua', '12348', '7', FALSE, '2005-11-10');
+
+INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
+    VALUE
+    (11, 'misifu', 'salvaje', 'blanco', 'la rua', '12349', '8', FALSE, '2004-11-10');

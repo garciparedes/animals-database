@@ -1,3 +1,6 @@
+/*
+Consulta 4: 5 infracciones mas comunes
+ */
 SELECT *
 FROM (
          SELECT

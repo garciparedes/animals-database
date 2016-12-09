@@ -1,3 +1,6 @@
+/*
+Tabla Licencia
+ */
 CREATE TABLE licencia (
 
 
