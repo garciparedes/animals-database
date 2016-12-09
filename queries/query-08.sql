@@ -1,5 +1,6 @@
 SELECT DISTINCT
-    a.id_animal
+    a.id_animal,
+    a.aplicacion
 FROM
     (
         SELECT *
