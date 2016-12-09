@@ -487,133 +487,308 @@ AS
 POBLACION DE TABLAS
 */
 
-INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUES
-    (7,     'vaca',     'Cattle',   FALSE,  FALSE,  FALSE,  FALSE),
-    (8,     'vaca',     'Cattle',   FALSE,  FALSE,  FALSE,  FALSE),
-    (9,     'cabra',    'boer',     FALSE,  TRUE,   FALSE,  FALSE);
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (7, 'vaca', 'Cattle', FALSE, FALSE, FALSE, FALSE);
+
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (8, 'vaca', 'Cattle', FALSE, FALSE, FALSE, FALSE);
+
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (9, 'cabra', 'boer', FALSE, TRUE, FALSE, FALSE);
 
 
-INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUES
-    (1,     'perro',    'alano',    TRUE,   TRUE,   FALSE,  TRUE),
-    (2,     'perro',    'alano',    TRUE,   TRUE,   FALSE,  FALSE),
-    (3,     'gato',     'persa',    TRUE,   FALSE,  TRUE,   TRUE),
-    (4,     'gato',     'alano',    TRUE,   FALSE,  FALSE,  FALSE),
-    (5,     'gato',     'siamese',  TRUE,   FALSE,  FALSE,  TRUE),
-    (6,     'perro',    'alano',    TRUE,   TRUE,   FALSE,  FALSE),
-    (10,    'perro',    'mastin',   TRUE,   TRUE,   FALSE,  FALSE);
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (1, 'perro', 'alano', TRUE, TRUE, FALSE, TRUE);
+
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (2, 'perro', 'alano', TRUE, TRUE, FALSE, FALSE);
+
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (3, 'gato', 'persa', TRUE, FALSE, TRUE, TRUE);
+
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (4, 'gato', 'alano', TRUE, FALSE, FALSE, FALSE);
+
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (5, 'gato', 'siamese', TRUE, FALSE, FALSE, TRUE);
+
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (6, 'perro', 'alano', TRUE, TRUE, FALSE, FALSE);
+
+INSERT INTO animal (id_animal, especie, raza, de_compañia, peligroso, exotico, extranjero) VALUE
+    (10, 'perro', 'mastin', TRUE, TRUE, FALSE, FALSE);
 
 
 INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
-VALUES
-    (1, 'paco', 'tranquilo', 'blanco', 'la rua', '1234', '1', FALSE, '2005-11-10'),
-    (2, 'calcetines', 'tranquilo', 'blanco', 'la rua', '12342', '2', FALSE, '2005-11-10'),
-    (3, 'charly', 'tranquilo', 'blanco', 'la rua', '12343', '3', FALSE, '2005-11-10'),
-    (4, 'toby', 'tranquilo', 'blanco', 'la rua', '12345', '4', FALSE, '2005-11-10'),
-    (5, 'toby', 'tranquilo', 'blanco', 'la rua', '12346', '5', FALSE, '2005-11-10'),
-    (6, 'manchas', 'tranquilo', 'blanco', 'la rua', '12347', '6', FALSE, '2005-11-10'),
+    VALUE
+    (1, 'paco', 'tranquilo', 'blanco', 'la rua', '1234', '1', FALSE, '2005-11-10');
+
+INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
+    VALUE
+    (2, 'calcetines', 'tranquilo', 'blanco', 'la rua', '12342', '2', FALSE, '2005-11-10');
+
+INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
+    VALUE
+    (3, 'charly', 'tranquilo', 'blanco', 'la rua', '12343', '3', FALSE, '2005-11-10');
+
+INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
+    VALUE
+    (4, 'toby', 'tranquilo', 'blanco', 'la rua', '12345', '4', FALSE, '2005-11-10');
+
+INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
+    VALUE
+    (5, 'toby', 'tranquilo', 'blanco', 'la rua', '12346', '5', FALSE, '2005-11-10');
+
+INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
+    VALUE
+    (6, 'manchas', 'tranquilo', 'blanco', 'la rua', '12347', '6', FALSE, '2005-11-10');
+
+INSERT INTO animal_censado (id_animal, nombre, aptitud, capa, domicilio, id_chip, id_censal, lazarillo, nacimiento)
+    VALUE
     (10, 'misifu', 'tranquilo', 'blanco', 'la rua', '12348', '7', FALSE, '2005-11-10');
 
 
 INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
-    (1, 'rabia'),
-    (2, 'rabia'),
-    (3, 'rabia'),
-    (4, 'rabia'),
-    (5, 'rabia'),
-    (6, 'rabia'),
-    (7, 'rabia'),
-    (8, 'rabia'),
-    (9, 'rabia'),
+    (1, 'rabia');
+
+INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
+    (3, 'rabia');
+
+INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
+    (4, 'rabia');
+
+INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
+    (7, 'rabia');
+
+INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
+    (8, 'rabia');
+
+INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
+    (9, 'rabia');
+
+INSERT INTO vacuna (id_animal, nombre_vacuna) VALUES
     (10, 'rabia');
 
-INSERT INTO responsable (id_responsable, nombre, domicilio) VALUES
-    (1 ,'sergio', 'la paz 7 3ºc'),
-    (2 ,'javier', 'la paz 7 3ºc'),
-    (4,'fernando', 'la paz 7 3ºc'),
-    (5, 'alberto', 'la paz 7 3ºc'),
-    (6,'juan', 'la paz 7 3ºc'),
-    (7,'mario', 'la paz 7 3ºc'),
-    (8,'cristian', 'la paz 7 3ºc'),
-    (9,'maria', 'la paz 7 3ºc'),
-    (10,'silvia', 'la paz 7 3ºc'),
-    (11,'jose', 'la paz 7 3ºc'),
-    (12,'lucia', 'la paz 7 3ºc'),
-    (13,'mariano', 'la paz 7 3ºc'),
-    (14,'eutiquio', 'la paz 7 3ºc'),
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (1 ,'sergio', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (2 ,'javier', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (4,'fernando', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (5, 'alberto', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (6,'juan', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (7,'mario', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (8,'cristian', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (9,'maria', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (10,'silvia', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (11,'jose', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (12,'lucia', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (13,'mariano', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (14,'eutiquio', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
     (15,'carlos', 'la paz 7 3ºc');
 
-INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUES
-    (1, '07253620H', 'garcia prado', '1994-08-11', FALSE, '2020-10-02'),
-    (2, '72911354C', 'sánchez', '1990-08-11', FALSE, '2020-10-04'),
-    (4, '28504321F', 'lopez', '1992-08-11', FALSE , '2008-10-12'),
-    (5, '30446307B', 'fernandez', '1997-08-11', FALSE,'2020-10-21'),
-    (6, '42441622K', 'hoyos', '1986-08-11', FALSE, NULL),
-    (7, '37241668E', 'romero', '1975-08-11', TRUE, NULL),
-    (8, '76071821B', 'fernandez', '1954-08-11', FALSE, '2016-12-10'),
-    (9, '51469358G', 'ramirez', '200-08-11', FALSE, NULL),
-    (10, '90307191Z', 'hernández', '1964-08-11', TRUE , '2020-10-16'),
-    (11, '84355907A', 'gutierrez', '1984-08-11', FALSE, NULL),
-    (12, '51454171C', 'marcos', '1993-08-11', FALSE, NULL),
-    (13, '03207026K', 'urbón', '1961-08-11', FALSE, NULL),
-    (14, '89051216T', 'cabeza', '1955-08-11', TRUE, NULL),
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (1, '07253620H', 'garcia prado', '1994-08-11', FALSE, '2020-10-02');
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (2, '72911354C', 'sánchez', '1990-08-11', FALSE, '2020-10-04');
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (4, '28504321F', 'lopez', '1992-08-11', FALSE , '2008-10-12');
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (5, '30446307B', 'fernandez', '1997-08-11', FALSE,'2020-10-21');
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (6, '42441622K', 'hoyos', '1986-08-11', FALSE, NULL);
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (7, '37241668E', 'romero', '1975-08-11', TRUE, NULL);
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (8, '76071821B', 'fernandez', '1954-08-11', FALSE, '2016-12-10');
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (9, '51469358G', 'ramirez', '200-08-11', FALSE, NULL);
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (10, '90307191Z', 'hernández', '1964-08-11', TRUE , '2020-10-16');
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (11, '84355907A', 'gutierrez', '1984-08-11', FALSE, NULL);
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (12, '51454171C', 'marcos', '1993-08-11', FALSE, NULL);
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (13, '03207026K', 'urbón', '1961-08-11', FALSE, NULL);
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
+    (14, '89051216T', 'cabeza', '1955-08-11', TRUE, NULL);
+
+INSERT INTO persona (id_responsable, nif, apellidos, nacimiento, delitos, seguro_rc) VALUE
     (15, '97400094Q', 'ceinos', '1967-08-11', FALSE, NULL);
 
-INSERT INTO responsable (id_responsable, nombre, domicilio) VALUES
-    (3, 'fasa', 'la paz 7 3ºc'),
-    (30, 'zoo el refugio', 'la paz 7 3ºc'),
-    (31, 'circo del sol', 'la paz 7 3ºc'),
-    (32, 'clinica mataperros', 'la paz 7 3ºc'),
-    (33, 'clinica expanta cabras', 'la paz 7 3ºc'),
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (3, 'fasa', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (30, 'zoo el refugio', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (31, 'circo del sol', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (32, 'clinica mataperros', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
+    (33, 'clinica expanta cabras', 'la paz 7 3ºc');
+
+INSERT INTO responsable (id_responsable, nombre, domicilio) VALUE
     (34, 'explotacion de vacuno ramirez', 'la paz 7 3ºc');
 
 
-INSERT INTO organizacion (id_responsable, cif, tipo) VALUES
-    (3, '423452352', 'explotacion'),
-    (30, '423452351', 'zoo'),
-    (31, '423452353', 'circo'),
-    (32, '423452354', 'clinica'),
-    (33, '423452355', 'clinica'),
+INSERT INTO organizacion (id_responsable, cif, tipo) VALUE
+    (3, '423452352', 'explotacion');
+
+INSERT INTO organizacion (id_responsable, cif, tipo) VALUE
+    (30, '423452351', 'zoo');
+
+INSERT INTO organizacion (id_responsable, cif, tipo) VALUE
+    (31, '423452353', 'circo');
+
+INSERT INTO organizacion (id_responsable, cif, tipo) VALUE
+    (32, '423452354', 'clinica');
+
+INSERT INTO organizacion (id_responsable, cif, tipo) VALUE
+    (33, '423452355', 'clinica');
+
+INSERT INTO organizacion (id_responsable, cif, tipo) VALUE
     (34, '423452356', 'explotacion');
 
 
-INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUES
-    (1, 'perros_peligrosos', 1, '2007-10-01', '2027-10-01'),
-    (2, 'perros_peligrosos', 2, '2007-10-01', '2027-10-01'),
-    (3, 'perros_peligrosos', 3, '2007-10-01', '2027-10-01'),
-    (4, 'perros_peligrosos', 4, '2007-10-01', '2027-10-01'),
+INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUE
+    (1, 'perros_peligrosos', 1, '2007-10-01', '2027-10-01');
+
+INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUE
+    (2, 'perros_peligrosos', 2, '2007-10-01', '2027-10-01');
+
+INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUE
+    (3, 'perros_peligrosos', 3, '2007-10-01', '2027-10-01');
+
+INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUE
+    (4, 'perros_peligrosos', 4, '2007-10-01', '2027-10-01');
+
+INSERT INTO licencia (id_responsable, nombre, num_licencia, inicio, fin) VALUE
     (5, 'perros_peligrosos', 5, '2007-10-01', '2027-10-01');
 
-INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUES
-    (1, 2, '2010-12-21', NULL),
-    (2, 2, '2010-12-21', NULL),
-    (3, 2, '2010-12-21', '2012-12-21'),
-    (3, 1, '2012-12-21', '2013-12-21'),
-    (3, 2, '2013-12-21', NULL),
+INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
+    (1, 2, '2010-12-21', NULL);
+
+INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
+    (2, 2, '2010-12-21', NULL);
+
+INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
+    (3, 2, '2010-12-21', '2012-12-21');
+
+INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
+    (3, 1, '2012-12-21', '2013-12-21');
+
+INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
+    (3, 2, '2013-12-21', NULL);
+
+INSERT INTO propiedad (id_animal, id_responsable, inicio_propiedad, fin) VALUE
     (4, 2, '2010-12-21', NULL);
 
 
-INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUES
-    (1, '2010-12-21', '2016-12-05', 'mordedura', 123, NULL, NULL),
-    (1, '2010-12-21', '2016-12-05 11:22', 'robo', NULL, NULL, NULL),
-    (1, '2010-12-21', '2016-12-06', 'robo', NULL, NULL, NULL),
-    (2, '2010-12-21', '2016-12-07', 'perdida', NULL, NULL, NULL),
-    (2, '2010-12-21', '2016-12-08', 'sin bozal', 123, NULL, NULL),
-    (1, '2010-12-21', '2016-12-09', 'caca calle', 123, NULL, NULL),
-    (1, '2010-12-21', '2016-12-15', 'robo', NULL, NULL, 2),
-    (2, '2010-12-21', '2015-01-17', 'caca calle',  123, NULL, NULL),
-    (2, '2010-12-21', '2015-02-18', 'caca calle', 79, NULL, NULL),
-    (2, '2010-12-21', '2015-03-19', 'caca calle', 123, NULL, NULL),
-    (2, '2010-12-21', '2015-04-20', 'caca calle', 43, NULL, NULL),
-    (2, '2010-12-21', '2015-05-21', 'caca calle', 200, NULL, NULL),
-    (1, '2010-12-21', '2015-06-22', 'caca calle', 233, NULL, NULL),
-    (3, '2010-12-21', '2015-07-23', 'caca calle', 30, NULL, NULL),
-    (3, '2010-12-21', '2015-08-24', 'caca calle', 1000, NULL, NULL),
-    (3, '2010-12-21', '2015-09-25', 'caca calle', 756, NULL, NULL),
-    (1, '2010-12-21', '2015-10-26', 'caca calle', 322, NULL, NULL),
-    (3, '2010-12-21', '2015-11-27', 'caca calle', 129, NULL, NULL),
-    (1, '2010-12-21', '2015-12-28', 'caca calle', 50, NULL, NULL),
-    (1, '2010-12-21', '2015-12-29', 'caca calle', 43, NULL, NULL),
-    (1, '2010-12-21', '2015-12-30', 'caca calle', 64, NULL, NULL),
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2016-12-05', 'mordedura', 123, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2016-12-05 11:22', 'robo', NULL, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2016-12-06', 'robo', NULL, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (2, '2010-12-21', '2016-12-07', 'perdida', NULL, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (2, '2010-12-21', '2016-12-08', 'sin bozal', 123, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2016-12-09', 'caca calle', 123, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2016-12-15', 'robo', NULL, NULL, 2);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (2, '2010-12-21', '2015-01-17', 'caca calle', 123, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (2, '2010-12-21', '2015-02-18', 'caca calle', 79, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (2, '2010-12-21', '2015-03-19', 'caca calle', 123, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (2, '2010-12-21', '2015-04-20', 'caca calle', 43, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (2, '2010-12-21', '2015-05-21', 'caca calle', 200, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2015-06-22', 'caca calle', 233, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (3, '2010-12-21', '2015-07-23', 'caca calle', 30, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (3, '2010-12-21', '2015-08-24', 'caca calle', 1000, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (3, '2010-12-21', '2015-09-25', 'caca calle', 756, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2015-10-26', 'caca calle', 322, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (3, '2010-12-21', '2015-11-27', 'caca calle', 129, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2015-12-28', 'caca calle', 50, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2015-12-29', 'caca calle', 43, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
+    (1, '2010-12-21', '2015-12-30', 'caca calle', 64, NULL, NULL);
+
+INSERT INTO incidencia (id_animal, inicio_propiedad, fecha, nombre, sancion, medida_cautelar, id_tenedor) VALUE
     (1, '2010-12-21', '2015-12-31', 'caca calle', 139, NULL, NULL);
 
 

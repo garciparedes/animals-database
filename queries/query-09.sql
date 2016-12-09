@@ -4,7 +4,8 @@ SELECT
     i.fecha,
     i.nombre,
     i.sancion,
-    i.medida_cautelar
+    i.medida_cautelar,
+    i.tipo_sancion
 FROM
     view_persona vp,
     propiedad p,
