@@ -6,7 +6,7 @@ CHECK(
     (
         SELECT COUNT(*)
             FROM
-                responsable r
+                responsable r,
                 persona p,
                 organizacion o
             WHERE

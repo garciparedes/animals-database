@@ -8,8 +8,11 @@ CREATE TABLE organizacion (
     cif            VARCHAR(20) NOT NULL,
     tipo           VARCHAR(50) NOT NULL,
 
+    CONSTRAINT organizacion__unique_cif
+    UNIQUE (cif),
+
     CONSTRAINT organizacion__clave
-    PRIMARY KEY (id_responsable, cif),
+    PRIMARY KEY (id_responsable),
 
 
     CONSTRAINT organizacion__responsable

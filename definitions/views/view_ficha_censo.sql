@@ -22,16 +22,18 @@ AS
         propiedad p,
         view_persona per LEFT JOIN (
         SELECT
-            per.id_responsable,
+            per1.id_responsable,
             l1.num_licencia
         FROM
-            view_persona per,
+            view_persona per1,
             licencia l1,
             licencia l2
         WHERE
-            l1.id_responsable = per.id_responsable AND
-            l2.id_responsable = per.id_responsable AND
-            l1.inicio > l2.inicio
+            l1.id_responsable = per1.id_responsable AND
+            l2.id_responsable = per1.id_responsable AND
+            l1.nombre = 'perros_peligrosos' AND
+            l2.nombre = 'perros_peligrosos' AND
+            l1.inicio >= l2.inicio
         ) as lic on per.id_responsable = lic.id_responsable
     WHERE
         per.id_responsable = p.id_responsable AND

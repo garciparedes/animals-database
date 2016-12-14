@@ -225,8 +225,11 @@ CREATE TABLE organizacion (
     cif            VARCHAR(20) NOT NULL,
     tipo           VARCHAR(50) NOT NULL,
 
+    CONSTRAINT organizacion__unique_cif
+    UNIQUE (cif),
+
     CONSTRAINT organizacion__clave
-    PRIMARY KEY (id_responsable, cif),
+    PRIMARY KEY (id_responsable),
 
 
     CONSTRAINT organizacion__responsable
@@ -278,12 +281,12 @@ CREATE TABLE licencia (
     CHECK (
         CASE WHEN nombre = 'perros_peligrosos'
             THEN
-                CURRENT_TIMESTAMP - YEAR(18) <= (
+                CURRENT_TIMESTAMP - YEAR(18) >= (
                     SELECT p.nacimiento
                     FROM persona p
                     WHERE
                         p.id_responsable = id_responsable AND
-                        p.delitos = TRUE AND
+                        p.delitos = FALSE AND
                         p.seguro_rc >= CURRENT_TIMESTAMP
                 )
         END
@@ -527,16 +530,18 @@ AS
         propiedad p,
         view_persona per LEFT JOIN (
         SELECT
-            per.id_responsable,
+            per1.id_responsable,
             l1.num_licencia
         FROM
-            view_persona per,
+            view_persona per1,
             licencia l1,
             licencia l2
         WHERE
-            l1.id_responsable = per.id_responsable AND
-            l2.id_responsable = per.id_responsable AND
-            l1.inicio > l2.inicio
+            l1.id_responsable = per1.id_responsable AND
+            l2.id_responsable = per1.id_responsable AND
+            l1.nombre = 'perros_peligrosos' AND
+            l2.nombre = 'perros_peligrosos' AND
+            l1.inicio >= l2.inicio
         ) as lic on per.id_responsable = lic.id_responsable
     WHERE
         per.id_responsable = p.id_responsable AND

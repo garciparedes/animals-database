@@ -32,12 +32,12 @@ CREATE TABLE licencia (
     CHECK (
         CASE WHEN nombre = 'perros_peligrosos'
             THEN
-                CURRENT_TIMESTAMP - YEAR(18) <= (
+                CURRENT_TIMESTAMP - YEAR(18) >= (
                     SELECT p.nacimiento
                     FROM persona p
                     WHERE
                         p.id_responsable = id_responsable AND
-                        p.delitos = TRUE AND
+                        p.delitos = FALSE AND
                         p.seguro_rc >= CURRENT_TIMESTAMP
                 )
         END
